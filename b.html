@@ -1,143 +1,235 @@
-
-
-
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jafw.0 - PlayStation games</title>
 
-	<!-- CREATED BY JMIX COD4 -->
-	<!-- https://t.me/landingpagescpa -->
 
-	<title></title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-	
-	
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
-</head>
-  
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PJFZEK6231"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  gtag('config', 'G-PJFZEK6231');
-</script>
-  
-<body>
-
-<style type="text/css">
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #fff;
-  display: flex;
-  justify-content: center;
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+ font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto;
+ background:#000;color:#fff;min-height:100vh
 }
 
-.cr .cover img {width:100%;}
-.cr .logo img {width:110px;height:110px;border:1px solid #ddd;margin-top:-30px;border-radius:5px;}
-.cr .logo {display:flex;}
-.cr .logo .info {padding:15px 0 0 15px;}
-.det {display:flex;margin:20px 0;}
-.det .item {width:100%;text-align:center;font-size:.9rem;}
-.btn-down {all:unset;width:100%;background:#000;border:none;color:#fff;padding:10px 0;border-radius:34px;margin:10px 0 20px 0;text-align:center;}
-.bad {display:flex;overflow:scroll;color:#666;}
-.bad div {margin-right:10px;padding:4px 8px;border:1.3px solid #ccc;font-size:.8rem;white-space:nowrap;border-radius:5px;}
-.v9 {background-image:url("https://www.incredibox.com/img/down-v9-artwork.jpg");padding:40px 0;background-position:center;background-size:cover;}
+/* HEADER */
+header{
+ background:#1a1a1a;
+ padding:30px 20px;
+ text-align:center;
+ border-bottom:1px solid #2a2a2a
+}
+h1{color:#4ade80;font-size:32px}
+.extension{color:#4ade80}
+.tagline{color:#fbbf24;font-size:14px}
 
-p {font-size:.85rem;color:#777;}
-h1 {font-size:1.6rem;}
-h2 {font-size:1.4rem;}
-h3 {font-size:1.25rem;}
-h4 {color:#eee;font-size:1rem;margin-bottom:12px;}
+/* SEARCH */
+.search-section{padding:20px;max-width:600px;margin:auto}
+#filter{
+ width:100%;
+ padding:15px 20px;
+ background:#1a1a1a;
+ border:1px solid #333;
+ border-radius:10px;
+ color:#fff
+}
 
+/* GAME CARD */
+.games-container{max-width:1200px;margin:auto;padding:20px}
+.game-card{
+ display:flex;align-items:center;
+ background:#1a1a1a;
+ border-radius:12px;
+ padding:15px;margin-bottom:15px;
+ cursor:pointer;
+ border:1px solid #2a2a2a;
+ transition:.3s
+}
+.game-card:hover{border-color:#4ade80;transform:translateX(5px)}
+.game-img{
+ width:70px;height:70px;
+ border-radius:8px;
+ object-fit:cover;margin-right:15px
+}
+.game-author{color:#4ade80;font-size:12px}
+.game-title{font-size:16px;font-weight:600}
+.game-description{color:#888;font-size:13px}
 
-footer {background:#252525;padding:30px 0;margin-top:40px;color:#a1a1a1;font-size:.9rem;}
+/* MODAL */
+.processing-modal{
+ display:none;
+ position:fixed;
+ inset:0;
+ background:rgba(0,0,0,.9);
+ z-index:9999;
+ align-items:center;
+ justify-content:center
+}
+.processing-content{
+ background:#1a1a1a;
+ padding:30px;
+ border-radius:15px;
+ max-width:360px;width:100%
+}
+.progress-bar-container{
+ background:#333;
+ height:14px;border-radius:10px;
+ overflow:hidden
+}
+.progress-bar{
+ background:#4ade80;
+ height:100%;width:0%;
+ text-align:center;
+ font-size:11px;
+ font-weight:700;
+ color:#000
+}
+
+/* DOWNLOAD BUTTON */
+.btn-down{
+ margin-top:20px;
+ width:100%;
+ background:#4ade80;
+ color:#000;
+ border:none;
+ padding:15px;
+ border-radius:10px;
+ font-size:16px;
+ font-weight:700;
+ cursor:pointer;
+}
+.btn-down:hover{background:#22c55e}
 </style>
-<br><br>
+</head>
 
+<body>
 
-<div class="cr" >
-	<div class="cover" ><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlotCFpKq80QFm0tS50AvHeLV8b8oy_Io6u7_UgW-JE5A6XcZb4X2MjmI&s=10" ></div>
-	<div class="container-md" >
-		<div class="logo" >
-			<img src="https://blogger.googleusercontent.com/img/a/AVvXsEiZj_9ZSrEjFbx6E22UMOyF5YErCLl5glSa89w1dYm2M9-qOEeWBeXOL7K0FdqMyWGXjHUL4hdybcU2JjzRsZibaRyxVZT2CDW02ixjuQl2NT7Me_pW28n32vL_nnnuQ1FIaH1CMsB5LsdK3EEaYHy9hvg2C4kLr3u_ZJ6u8p_Pr_lNNLOHUPCI4C1WE6w" >
-			<div class="info" >
-				<h1>HYTALE MOBILE</h1>
-				<small>HYPIXEL STUDIOS </small>
-			</div>
-		</div>
-		<div class="det" >
-			<div class="item" >
-				<div class="icon" >4.7 <i class="bi bi-star" ></i></div>
-				<div>1M reviews</div>
-			</div>
-			<div class="item" >
-				<div class="icon" ><i class="bi bi-download" ></i></div>
-				<div>120MB</div>
-			</div>
-			<div class="item" >
-				<div class="icon" >50K</div>
-				<div>Downloads</div>
-			</div>
-		</div>
-		<div>
-		
-		
-				<!-- CPA (Bdl Dik Oncklick B code Dyalk) -->
-			<button  class="btn-down"   onclick="location.href='https://confirmapp.store/cl/v/1xx98x';".fadeIn()">Download</button>
-		
-		
-	
-		</div>
-		<h2>About this game</h2>
-		<p>Roblox lite is an immersive online universe where you can create, share, and play games designed by millions of players worldwide. Explore countless worlds, take part in unique adventures, and enjoy endless creativity — all from your Android device. Build your own experiences or join others and discover why Roblox is one of the most popular platforms for gamers of all ages.</p>
-		<div class="bad" >
-			<div>#1 top games 2024</div> 
-			<div>#lite</div>
-			<div>#roblox</div>
-		</div>
-		<br> 
-		
-	</div>
+<header>
+ <h1>jafw<span class="extension">.0.club</span></h1>
+ <p class="tagline">- PlayStation games on your phone -</p>
+</header>
 
-<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8cf5a9ef-cd13-43a4-896c-f3741bcb303e/dlaea9q-d148c80c-feeb-448c-bd29-887550e20d47.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi84Y2Y1YTllZi1jZDEzLTQzYTQtODk2Yy1mMzc0MWJjYjMwM2UvZGxhZWE5cS1kMTQ4YzgwYy1mZWViLTQ0OGMtYmQyOS04ODc1NTBlMjBkNDcuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.WMcnDjQu_RtaMWSjLzbysGwYnJ0BReGgD1MnO7D9Wh4" class="w-100" >
-		
-	<div class="container-md" >
-<br>
-		<h2>So ROBLOX LITE</h2>
-		<h3> PLAY WITH FRIENDS AND ONLINE</h3>
-		<p>Gamers who are familiar and experienced with creative sandbox experiences will enjoy Roblox lite the most. It allows players to explore, build, and share unique worlds created by others — all while enjoying endless gameplay possibilities.</p>
-		
-		<h3>REDESIGNED SET PIECES</h3>
-		<p>Gamers who are familiar and experienced with creative sandbox experiences will enjoy Roblox lite the most. It allows players to explore, build, and share unique worlds created by others — all while enjoying endless gameplay possibilities.</p>
-		
-	</div>
-	
-	<footer>
-		<div class="container-md" >
-			<h4>ROBLOX !</h4>
-			<div class="row" >
-				<div class="col-6" >
-					<div class="mb-2" >About game</div>
-					<div class="mb-2" >roblox mobile</div>
-					<div class="mb-2" >Free download</div>
-				</div>
-				<div class="col-6" >
-					<div class="mb-2" >Help</div>
-					<div class="mb-2" >News</div>
-				</div>
-			</div>
-			<hr>
-			<center>&copy; 2025 Roblox Corporation EC Inc.</center>
-			</div>
-	</footer>
-	
-</div></body></html>
+<section class="search-section">
+ <input type="text" id="filter" placeholder="Search...">
+</section>
+
+<div class="games-container" id="games-list"></div>
+
+<!-- PROCESSING MODAL -->
+<div class="processing-modal" id="processing-modal">
+ <div class="processing-content">
+  <h3 style="text-align:center">Injecting...</h3>
+  <p id="processing-msg" style="text-align:center;color:#888;margin-bottom:15px">
+   Connecting...
+  </p>
+
+  <div class="progress-bar-container">
+   <div class="progress-bar" id="progress-bar">0%</div>
+  </div>
+ </div>
+</div>
+
+<script>
+const games=[
+{title: "ROBLOX MOD", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHR3MLgafVdUcykzHfKbyPIkawikStjfrWf5S5DXMX3g&s=10", desc: "Realistic bike racing with unlimited money."},
+            {title: "HAYTALE ", img: "https://blogger.googleusercontent.com/img/a/AVvXsEiZj_9ZSrEjFbx6E22UMOyF5YErCLl5glSa89w1dYm2M9-qOEeWBeXOL7K0FdqMyWGXjHUL4hdybcU2JjzRsZibaRyxVZT2CDW02ixjuQl2NT7Me_pW28n32vL_nnnuQ1FIaH1CMsB5LsdK3EEaYHy9hvg2C4kLr3u_ZJ6u8p_Pr_lNNLOHUPCI4C1WE6w", desc: "Martial arts action with unlimited skills."},
+            {title: "Rooftops & alleys", img: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2703850/7a62174321720853b2b79ab1dfd554e8f0a491f7/header.jpg", desc: "Parkour gameplay with mod menu."},
+            {title: "Beamng drive mobile", img: "https://s3.amazonaws.com/gameopedia_covers/covers/1653727/4508fc3bbbcf6b9c440498af6900703b.jpg", desc: "Realistic driving with unlimited cars."},
+            {title: "Rematch mobile", img: "https://image.api.playstation.com/vulcan/ap/rnd/202412/1301/bf53eec311119801d096ef4c5e05ef0feb20c365e568e344.png", desc: "Fast matches with unlocked features."},
+            {title: "The Last of Us 2 Mobile", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_QLpsv0DmfifEZ2VzQikiK0MwI9q67zBfmLhdAyY2jjvz9bJQ50TH3Wo8K_7u-nmAfgo", desc: "Story-driven survival with unlimited resources."},
+            {title: "Ghost of Tsushima Mobile", img: "https://image.api.playstation.com/vulcan/ap/rnd/202010/0222/b3iB2zf2xHj9shC0XDTULxND.png", desc: "Samurai adventure with unlimited gold."},
+            {title: "Assassin's Creed Mirage Mobile", img: "https://upload.wikimedia.org/wikipedia/en/2/23/Assassin%27s_Creed_Mirage_cover.jpeg", desc: "Stealth action with unlimited coins."},
+            {title: "Inside Mobile", img: "https://i.pinimg.com/originals/1c/f3/18/1cf3189182c0590efb17a040fd06ce26.jpg", desc: "Full dark adventure unlocked."},
+            {title: "Red Dead Redemption 2 Mobile", img: "https://upload.wikimedia.org/wikipedia/en/4/44/Red_Dead_Redemption_II.jpg", desc: "Open-world western with unlimited money."},
+            {title: "God of War Mobile", img: "https://upload.wikimedia.org/wikipedia/en/a/a7/God_of_War_4_cover.jpg", desc: "Epic battles with mod menu."},
+            {title: "Watch Dogs 2 Mobile", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUDaodqzabJjva89BxfdNBoiQKKi9fxiIFqrcagehTh0jUsErvqMcg-qO_SB7kVBSJSl0", desc: "Open-world hacking with unlimited money."},
+            {title: "Dragon Ball FighterZ Mobile", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1o7xnV5SSOYbeaS-HVFZHEzwOw9xyMicsiXAVz5ozzzeCqrrw75yaGiaW6szFdYqpCrc", desc: "Anime fighting with all characters."},
+            {title: "Attack on Titan 2 Mobile", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkZv0OWHlfzoO76qR_ODMksRDO0LZJBM_dCUA9lwq7bIimmWXVdkHc0Bd_ncEzoSxQ1kA", desc: "Intense battles with unlimited materials."},
+            {title: "Naruto Ultimate Ninja Storm 4 Mobile", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMgpJvG3oMtOazNyEO85gmgbUaCNUPT2ZTZs4j23Ld7EvrRSNAkAiUNTKEHkSEj1cKm6I", desc: "Ninja fights with all characters unlocked."},
+            {title: "GTA 5 Mobile", img: "https://upload.wikimedia.org/wikipedia/en/a/a5/Grand_Theft_Auto_V.png", desc: "Open-world crime with unlimited cash."},
+            {title: "Minecraft Mobile", img: "https://static.vecteezy.com/system/resources/thumbnails/002/948/768/small_2x/pixel-minecraft-style-land-background-vector.jpg", desc: "Creative survival with unlimited resources."},
+            {title: "Cuphead Mobile", img: "https://s3.amazonaws.com/gameopedia_covers/covers/907134/4bafba8d6811e04e85c7e9646cf5177a.png", desc: "Classic boss fights fully unlocked."},
+            {title: "Spider-Man 2 Mobile", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUigJth3hPq66ph0P44XG3gME4UMQm2NFj5vqjajLViFe1cqAoqIXC84t0hoTl8W2-4D4", desc: "Superhero action with unlimited upgrades."},
+            {title: "Counter Strike 2 Mobile", img: "https://s3.amazonaws.com/gameopedia_covers/covers/3271386/3c83b35f11599402266a671290beb516.jpg", desc: "FPS action with unlimited money."},
+            {title: "Jump Force Mobile", img: "https://s3.amazonaws.com/gameopedia_covers/covers/883593/4b392164f89981c794c943b22936cff3.jpg", desc: "Anime crossover with all fighters."},
+            {title: "Elite auto brasil Mod", img: "https://i.postimg.cc/cC5SqQNL/unnamed.jpg", desc: "Driving game with unlimited money."},
+            {title: "Hollow knight silksong", img: "https://i.postimg.cc/YS1M4GQd/images-3.jpg", desc: "Full game access adventure."},
+            {title: "Rocket league mobile", img: "https://i.postimg.cc/s2F3D9GB/images-2.jpg", desc: "Car soccer with unlimited items."},
+            {title: "One piece mugen", img: "https://i.postimg.cc/rmjTJBnW/images-5.jpg", desc: "Fighting game with all characters."},
+            {title: "One piece fighting path", img: "https://i.postimg.cc/G2drvLQd/images-4.jpg", desc: "Anime action with unlimited gems."},
+            {title: "Jujutsu Kaisen Cursed Clash", img: "https://i.postimg.cc/7ZYNvfm6/images.jpg", desc: "Anime battles with unlocked characters."},
+            {title: "Hajime No Ippo The Fighting", img: "https://i.postimg.cc/0y2Cgbcy/images-(1).jpg", desc: "Boxing fights with unlimited stamina."},
+            {title: "RDR Mobile", img: "https://play-lh.googleusercontent.com/SBpKtn6H9H050lQaUHjP9IITtCpb03yLj2q929lLzvl68UCAdqyUWfkyvJDeOUu0Ta8", desc: "Wild west action with unlimited gold."},
+            {title: "WWE 2K25 Mobile", img: "https://i.postimg.cc/Jz4QwGP4/images-(2).jpg", desc: "Wrestling action with all unlocks."},
+            {title: "Days Gone Mobile", img: "https://i.postimg.cc/YCqxchbp/images-(3).jpg", desc: "Survival gameplay with unlimited resources."},
+            {title: "Horizon Zero Dawn Mobile", img: "https://i.postimg.cc/P5rMGP2X/images-(4).jpg", desc: "Open-world adventure with unlimited shards."},
+            {title: "Euro Truck Simulator", img: "https://i.postimg.cc/MpKYkvdx/images-(5).jpg", desc: "Truck driving with unlimited money."},
+            {title: "Assetto Corsa Mobile", img: "https://i.postimg.cc/W1b7RhXT/images-(6).jpg", desc: "Realistic racing with unlocked cars."},
+            {title: "Fifa Street Mobile", img: "https://i.postimg.cc/W1b7RhXV/images-(7).jpg", desc: "Street football with unlimited skills."},
+            {title: "Getaway 2", img: "https://i.postimg.cc/W1q2vfzL/images-1.jpg", desc: "Crime action with unlimited money."},
+            {title: "Mini soccer star Mod", img: "https://i.postimg.cc/L5sp0xwW/images.jpg", desc: "Arcade football game with unlimited money and unlocked skills."},
+            {title: "Kimetsu no yaiba thc 2", img: "https://i.postimg.cc/BQpX7zyq/Screenshot-2025-09-19-211151.png", desc: "Demon slayer battles with all characters."},
+            {title: "Forza Horizon 5 Mobile", img: "https://s3.amazonaws.com/gameopedia_covers/covers/1824621/d5e0490d7a06ac352730a2a444d432df.jpg", desc: "Open-world racing with unlimited credits."},
+            {title: "Haytale mobile", img: "https://s3.amazonaws.com/gameopedia_covers/covers/2990068/33996ceea154cd64c6825c9ac5fd9327.jpg", desc: "Sandbox RPG world with creative freedom and unlocked content."},
+            {title: "Avatar : from the ashes", img: "https://lumiere-a.akamaihd.net/v1/images/hb_avatar_frontiersofpandora_fromtheashes_mobile_banner_9f40cffb.jpeg?region=0,0,1024,768&width=960", desc: "Epic open-world adventure with enhanced powers and full access."},
+            {title: "Snow Runner", img: "https://hb.imgix.net/d8e9fd4f19bc311690d90d8985e7656c7bde4726.jpg?auto=compress,format&fit=crop&h=353&w=616&s=c5e68257625425040f403168652672a0", desc: "Extreme off-road driving with unlimited vehicles and resources."},
+            {title: "Etiket pro", img: "https://www.modeditor.com/wp-content/uploads/2022/12/etiketPro.jpg", desc: "Smart productivity tools with full pro features unlocked."},
+            {title: "The crew motor fest", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ5-kX08El7Dwbp5W60Yw86eN77Z6GnshUlc5cSNHkNEysyA1vRp-TiEkM_81liL1kvr8", desc: "Open-world racing festival with unlocked cars and endless events."},
+            {title: "Skate 4", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC3Cmqkdm3XPQ4XwZQbijrG8xE3ZsoP753fW23ZWc_-adcB8a_hH-k8FmMEI3zY5E1sn4", desc: "Realistic skateboarding with total freedom and unlimited tricks."},
+            {title: "Left 4 dead 2", img: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c3f5e888-9edb-41d5-9cec-ad06280152e9/d55x3hp-3291ab4a-bc31-41b5-95ef-98e17fdc4e6a.png/v1/fit/w_512,h_512/left_4_dead_2_game_icon_by_mec120_d55x3hp-375w-2x.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTEyIiwicGF0aCI6Ii9mL2MzZjVlODg4LTllZGItNDFkNS05Y2VjLWFkMDYyODAxNTJlOS9kNTV4M2hwLTMyOTFhYjRhLWJjMzEtNDFiNS05NWVmLTk4ZTE3ZmRjNGU2YS5wbmciLCJ3aWR0aCI6Ijw9NTEyIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.YR_d9xJ-zib884mTw8iOMamEvzbQuWM0b41ZwuepNyo", desc: "Intense co-op zombie survival with full campaigns unlocked."}
+        ];
+
+const list=document.getElementById("games-list");
+const modal=document.getElementById("processing-modal");
+const bar=document.getElementById("progress-bar");
+const msg=document.getElementById("processing-msg");
+
+function render(){
+ list.innerHTML=games.map(g=>`
+  <div class="game-card">
+   <img src="${g.img}" class="game-img">
+   <div>
+    <div class="game-author">jafw.0</div>
+    <div class="game-title">${g.title}</div>
+    <div class="game-description">${g.desc}</div>
+   </div>
+  </div>
+ `).join("");
+
+ document.querySelectorAll(".game-card").forEach(c=>{
+  c.onclick=startProcess;
+ });
+}
+render();
+
+function startProcess(){
+ modal.style.display="flex";
+ let progress=0;
+
+ let int=setInterval(()=>{
+  progress+=Math.floor(Math.random()*10)+5;
+  if(progress>100)progress=100;
+
+  bar.style.width=progress+"%";
+  bar.textContent=progress+"%";
+
+  if(progress>=100){
+   clearInterval(int);
+   msg.textContent="Ready to download";
+
+   document.querySelector(".processing-content").insertAdjacentHTML(
+    "beforeend",
+    `<button class="btn-down" onclick="location.href='https://confirmapp.online/cl/i/1xx98x';".fadeIn()">
+      Download
+     </button>`
+   );
+  }
+ },600);
+}
+</script>
+
+</body>
+</html>

